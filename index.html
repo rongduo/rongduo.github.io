@@ -40,7 +40,15 @@ width: 350px;
 object-fit: fill ;
 }
 </style>    
-    
+
+<style>
+    .custom-link {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+
+
 <script type="text/javascript" src="./yujie_home_files/jquery-1.7.2.js"></script>
 	<script>
 		$(document).ready(function() {
@@ -126,10 +134,11 @@ object-fit: fill ;
                     </div>
                     <div class="col-sm-9">
                         <h2><font color="black">Yujie Wang</font></h2>
-                        <h5><font color="black">Ph.D. Candidate</font></h5>
+                        <!-- <h5><font color="black">Postdoc</font></h5> -->
                         <!--<p><font color="black"> Phone: +86 158 2202 9958</font></p>-->
-                        <p><font color="black">Email: yujiew.cn(AT)gmail.com</font></p>
-                        <p><font color="black">Address: Jingyuan Courtyard 5, Peking University, Beijing</font></p>
+                        <p><font color="black">Email: yujiew.cn@gmail.com</font></p>
+                        <p><font color="black">Address: 201 S. Columbia St. CB 3175, UNC-Chapel Hill, North Carolina</font></p>
+                        <!--<p><font color="black">Address: Jingyuan Courtyard 5, Peking University, Beijing</font></p>-->
                         <!-- 
                         <div class="row">
                             <div class="col-sm-2 feature-left space-top">
@@ -170,16 +179,18 @@ object-fit: fill ;
                 <div id="layout-content" style="margin-top: 25px; width: 80%;" class="page-header space-left">
                     <h3>About Me.</h3>
                     
-                    <p stype="text-align: justify color:black;">I am a 4th-year Ph.D. student in Computer Science at Shandong University, under the supervision of <a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>.</p>
-
-                    <p>  My academic journey spans an M.S. from Tianjin University and undergraduate studies at Sichuan University. </p>	
+                    <p stype="text-align: justify color:black;">I am currently a postdoctoral researcher in Computer Science at the University of North Carolina at Chapel Hill, hosted by 
+                        <a href="https://www.cs.unc.edu/~cpk/">Prof. Praneeth Chakravarthula</a>. </p>
+                    <!--<a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>.</p>-->
+                    <p> I received my Ph.D. in 2024 from Shandong University, where I was supervised by <a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>.</p>
+                    <p> Prior to that, I earned my M.S. from Tianjin University and completed my undergraduate studies at Sichuan University. </p>	
             <!--    
                     <p stype="text-align: justify;">I spent four months at New York University working with <a href="https://cims.nyu.edu/gcl/daniele.html"> Prof. Daniele Panozzo </a>. 
 		    Prior to that, I had a wonderful time visiting <a href="https://people.mpi-inf.mpg.de/~theobalt/">Prof. Christian Theobalt</a> at Max-Planck-Institute for Informatics, Saarbrucken, Germany. 
 		    I also spent great time at University College London under the supervision of <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/">Prof. Niloy J. Mitra</a>.
             </p><p stype="text-align: justify;">Before starting my PhD, I obtained a Bachelor's Degree in the Department of Computer Science and Technology, Huazhong University of Science and Technology in 2014 and supervised by <a href="http://grid.hust.edu.cn/hjin/">Prof. Hai Jin</a>.
                     </p>-->
-		    <p stype="text-align: justify;">My research interests include 3D scene reconstruction & generation and computer generated holography.
+		    <p stype="text-align: justify;">My research interests lie in 3D scene reconstruction and generation, as well as computer-generated holography.
 		    </p>
                 <!-- / features -->
 		</div>
@@ -219,6 +230,24 @@ object-fit: fill ;
                 </div>
                 <div class="timeline  border-color">
 
+                    <div class="timeline-item">
+                        <div class="row">
+                            <div class="col-md-2 timeline-info">
+                               <div class="image-container"><img src="./yujie_home_files/images/dof_gs.png"  height="140px" alt=""></div>
+                            </div><!-- / timeline-info -->
+                            <div class="col-md-10 timeline-details">
+                                <h5> DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal</h5>
+                                <!--<h5>and non-local priors</h>-->
+                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
+                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
+                        <p><i><b>Yujie Wang</b></i>,&nbsp;  <a href="https://www.cs.unc.edu/~cpk/"  class="custom-link">Praneeth Chakravarthula</a>&nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/"  class="custom-link">Baoquan Chen </a> </p>
+                        <p>The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR) 2025</p>
+                        <a href="https://arxiv.org/abs/2405.17351">[Paper]</a>    
+                        <!-- <a href="https:/sss/">[Project page]</a>                  -->
+                            </div><!-- / timeline-details -->
+                        </div><!-- / row -->
+                    </div><!-- / timeline-item -->
+
 
                     <div class="timeline-item">
                         <div class="row">
@@ -230,7 +259,7 @@ object-fit: fill ;
                                 <!--<h5>and non-local priors</h>-->
                                 <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
                         <h5 class="text-primary">Best Paper Honorable Mention</h5>
-                        <p><i><b>Yujie Wang*</b></i>,&nbsp; <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>,&nbsp; <a href="">Qi Sun,&nbsp;</a> and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen </a> </p>
+                        <p><i><b>Yujie Wang*</b></i>,&nbsp; <a href="https://www.cs.unc.edu/~cpk/" class="custom-link">Praneeth Chakravarthula*</a>,&nbsp; <a href="https://qisun.me/" class="custom-link">Qi Sun,&nbsp;</a> and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
                         <p>ACM Transactions on Graphics (presented at SIGGRAPH 2022 and IEEE VIS 2022) </p>
                         <a href="https://www.immersivecomputinglab.org/wp-content/uploads/2022/07/Hologram_compression_network_11-compressed.pdf">[Paper]</a>    
                         <a href="https://github.com/HoloCompress/DPRC">[Code]</a>                 
@@ -248,8 +277,8 @@ object-fit: fill ;
                                 <!--<h5>and non-local priors</h>-->
                                 <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
                         <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://xuelin-chen.github.io/">Xuelin Chen</a>&nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen </a> </p>
-                        <p>Journal of Computer Science and Technology, 2024 (Accepted). (Arxiv, 2022.)</p>
+                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://xuelin-chen.github.io/" class="custom-link">Xuelin Chen</a>&nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
+                        <p>Journal of Computer Science and Technology, 2024 (Arxiv, 2022.)</p>
                         <a href="https://arxiv.org/pdf/2210.01202.pdf">[Paper]</a>    
                         <a href="https://singrav.github.io/">[Project page]</a>                 
                             </div><!-- / timeline-details -->
@@ -266,7 +295,7 @@ object-fit: fill ;
                                 <!--<h5>and non-local priors</h>-->
                                 <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
                         <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://fqnchina.github.io/">Qingnan Fan</a>,&nbsp; <a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>,&nbsp; <a href="https://www.dongdongchen.bid/">Dongdong Chen</a>,&nbsp; <a href="http://medialab-tju.org/">Jingyu Yang</a>,&nbsp; Jianzhi Lu,&nbsp; <a href="https://www.cs.huji.ac.il/~danix/">Dani Lischinski</a>,&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen </a> </p>
+                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://fqnchina.github.io/" class="custom-link">Qingnan Fan</a>,&nbsp; <a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li</a>,&nbsp; <a href="https://www.dongdongchen.bid/" class="custom-link">Dongdong Chen</a>,&nbsp; <a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a>,&nbsp; Jianzhi Lu,&nbsp; <a href="https://www.cs.huji.ac.il/~danix/" class="custom-link">Dani Lischinski</a>,&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
                         <p>Journal of Image and Graphics (Chinese), 2022</p>
                         <a href="http://www.cjig.cn/jig/ch/reader/view_abstract.aspx?file_no=20220207">[Paper]</a>    
                         <a href="https://github.com/rongduo/photorealistic_inrinsic_dataset">[Dataset and Bibtex]</a>        
@@ -285,7 +314,7 @@ object-fit: fill ;
                                 <!--<h5>and non-local priors</h>-->
                                 <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
                         <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li*</a>,&nbsp;<i><b>Yujie Wang*</b></i>,&nbsp;<a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm"> Xinchen Ye</a>,&nbsp; Chenggang Yan,&nbsp; and &nbsp;<a href="http://medialab-tju.org/">Jingyu Yang</a></p>
+                        <p><a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li*</a>,&nbsp;<i><b>Yujie Wang*</b></i>,&nbsp;<a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm" class="custom-link"> Xinchen Ye</a>,&nbsp; Chenggang Yan,&nbsp; and &nbsp;<a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a></p>
                         <p>Signal Processing: Image Communication, 2021</p>
                         <a href="https://www.sciencedirect.com/science/article/pii/S0923596521001132">[Paper]</a>    
                         <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation">[Code and Bibtex]</a>                  
@@ -303,7 +332,7 @@ object-fit: fill ;
                                 <!--<h5>and non-local priors</h>-->
                                 <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
                         <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5>
-                        <p><i><b>Yujie Wang</b></i>,&nbsp;<a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>,&nbsp;<a href="http://medialab-tju.org/">Jingyu Yang</a> &nbsp; and &nbsp; <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm"> Xinchen Ye </a></p>
+                        <p><i><b>Yujie Wang</b></i>,&nbsp;<a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li</a>,&nbsp;<a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a> &nbsp; and &nbsp; <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm" class="custom-link"> Xinchen Ye </a></p>
                         <p>IEEE International Conference on Multimedia and Expo, ICME 2017, Hongkong, China.</p>
                         <a href="https://ieeexplore.ieee.org/document/8019390">[Paper]</a> 
                         <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation">[Code]</a>                  
@@ -365,12 +394,56 @@ object-fit: fill ;
                     <div class="page-header" style="text-indent:-0.5em;">
                         <h3>Research Experience.</h3>
                     </div>
-                    <div class="timeline  border-color">        
+                    <div class="timeline  border-color">
+                        
+                    <div class="timeline-item">
+                            <div class="timeline-point  off-timeline-point  point-color"></div>
+                            <div class="row">
+                                <div class="col-md-3 timeline-info">
+                                    <p class="timeline-date">2024.12-</p>  
+                                    <h4 class="timeline-com">UNC-Chapel Hill, USA</h4>
+                                    <h6 class="timeline-role">Postdoctoral Researcher</h6>
+                                    <p class="timeline-location">Chapel Hill, North Carolina, USA</p>
+                                </div><!-- / timeline-info -->
+                                <!-- <div class="col-md-9 timeline-details">
+                                    <p>
+                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
+                                    </p>
+                                    <p>
+                                            Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
+                                    </p>
+                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
+                                </div>/ timeline-details -->
+                        </div><!-- / row -->
+                    </div><!-- / timeline-item -->  
+
+                        
+                    <div class="timeline-item">
+                            <div class="timeline-point  off-timeline-point  point-color"></div>
+                            <div class="row">
+                                <div class="col-md-3 timeline-info">
+                                    <p class="timeline-date">2024.04-2024.11</p>  
+                                    <h4 class="timeline-com">Peking University, China</h4>
+                                    <h6 class="timeline-role">Research Scholar</h6>
+                                    <p class="timeline-location">Beijing, China</p>
+                                </div><!-- / timeline-info -->
+                                <!-- <div class="col-md-9 timeline-details">
+                                    <p>
+                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
+                                    </p>
+                                    <p>
+                                            Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
+                                    </p>
+                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
+                                </div>/ timeline-details -->
+                        </div><!-- / row -->
+                    </div><!-- / timeline-item -->  
+
                     <div class="timeline-item">
                         <div class="timeline-point  off-timeline-point  point-color"></div>
                             <div class="row">
                                 <div class="col-md-3 timeline-info">
-                                    <p class="timeline-date">2021.07-</p>  
+                                    <p class="timeline-date">2021.07-2024.03</p>  
                                     <h4 class="timeline-com">Peking University, China</h4>
                                     <h6 class="timeline-role">Visiting Student</h6>
                                     <p class="timeline-location">Beijing, China</p>
