@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="refresh" content="0;url=https://dof-gs.github.io/">
+  </head>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <!-- <meta name="description" content="DESCRIPTION META TAG"> -->
+<!-- For Twitter/Slack/Teams -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting">
+<meta name="twitter:description" content="Post-capture refocusing, defocus rendering, and blur removal with DOF-GS.">
+<meta name="twitter:image" content="https://yujiewang.info/projects/dof_gs/static/images/dof_render_results.png">
+
+<!-- For Facebook/Open Graph -->
+<meta property="og:title" content="DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting">
+<meta property="og:description" content="Post-capture refocusing, defocus rendering, and blur removal with DOF-GS.">
+<meta property="og:image" content="https://yujiewang.info/projects/dof_gs/static/images/dof_render_results.png">
+<meta property="og:url" content="https://yujiewang.info/projects/dof_gs/index.html">
+
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing</title>
+  <link rel="icon" type="image/x-icon" href="static/images/camera_icon.webp">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <!-- <div class="hero-body"  style="background: linear-gradient(to bottom, #cafaff96, #f3f3eb00);"> -->
+    <!-- <div class="hero-body" style="background: linear-gradient(to bottom, #fff7e6, #fffef8, #ffffff);"> -->
+    <div class="hero-body" style="background: linear-gradient(to bottom, #fdf1f5, #f5faff, #ffffff);">
+    <!-- <div class="hero-body" style="background: linear-gradient(to bottom, #fae6ee, #eaf4fb, #ffffff);">  -->
+
+    <!-- <div class="hero-body" style="background: linear-gradient(to bottom, #fce4ec,  #e6f0fa, #ffffff);"> -->
+
+    <!-- <div class="hero-body" style="background: linear-gradient(to bottom, #f3b8c4, #6a95b9);"> -->
+
+
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal</h1>
+            
+            <div class="is-size-5 cvpr-line">
+              <span><strong class="cvpr-title">CVPR 2025</strong></span>
+            </div>
+
+            
+            
+            
+            
+            
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yujiewang.info/" target="_blank">Yujie Wang</a><sup>1,2,3</sup></span>&nbsp;&nbsp;
+                <span class="author-block">
+                  <a href="https://www.cs.unc.edu/~cpk/" target="_blank">Praneeth Chakravarthula</a><sup>3,*</sup></span>&nbsp;&nbsp;
+                  <span class="author-block">
+                    <a href="https://baoquanchen.info/" target="_blank">Baoquan Chen</a><sup>1,2,*</sup></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <sup>1</sup>National Key Lab of General AI, China,
+                    <sup>2</sup>School of Intelligence Science and Technology, Peking University,
+                    <sup>3</sup>University of North Carolina at Chapel Hill 
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Joint Advising, Corresponding Author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2405.17351" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+
+                    <!-- ArXiv abstract Link -->
+                    <span class="link-block">
+                        <a href="https://arxiv.org/abs/2405.17351" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/rongduo/DOFGS_implementation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body" >
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item">
+          <!-- Video 1 -->
+          <video controls autoplay loop muted>
+            <source src="static/videos/daisy_video_4-cropped-border.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+
+
+        <div class="item">
+          <!-- Video 2 -->
+          <video controls autoplay loop muted>
+            <source src="static/videos/cups_video_2-cropped-border.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="item">
+          <!-- Video 3 -->
+          <video controls autoplay loop muted>
+            <source src="static/videos/caps_video_2-cropped-border.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="item">
+          <!-- Video 2 -->
+          <video controls autoplay loop muted>
+            <source src="static/videos/wine_video_2-cropped-border.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+<!-- 加载 Bulma Carousel -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    bulmaCarousel.attach('#results-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      navigation: true,
+      pagination: true,
+      loop: true,  // 设置轮播循环
+    });
+
+    // 增大轮播按钮
+    document.querySelectorAll('.carousel-nav span').forEach(button => {
+      button.style.fontSize = '300px'; // 增大按钮
+      button.style.padding = '50px'; // 增加按钮点击区域
+    });
+  });
+</script>
+
+<!-- 自定义 CSS，增大按钮 -->
+<style>
+  .html {
+    --iron-icon-height: 150px !important; /* 增大图标高度 */
+    --iron-icon-width: 150px !important;  /* 增大图标宽度 */
+}
+
+  .carousel-nav {
+    font-size: 300px !important; /* 增大切换按钮 */
+  }
+  .carousel-nav span {
+    width: 5% !important;
+    height: 150px !important;
+    line-height: 150px !important;
+  }
+  video {
+    width: 100%;
+    height: 70vh;  
+    max-height: 520px; /* 限制视频高度 */
+    border-radius: 10px; /* 让视频边角更圆滑 */
+  }
+  video::-webkit-media-controls-fullscreen-button {
+    display: none !important;  /* 隐藏全屏按钮 */
+  }
+  
+  video::-webkit-media-controls {
+    display: none !important;  /* 隐藏整个控制栏 */
+  }
+  .has-text-centered, .hero-body {
+    margin-bottom: 0 !important;  /* 去掉所有容器的外边距 */
+    padding-bottom: 0 !important; /* 去掉所有容器的内边距 */
+  }
+  .emoji {
+    font-size: 1.2em;  /* 调整 emoji 大小 */
+    vertical-align: bottom;  /* 让它与文字对齐 */
+    margin-left: 4px;  /* 增加与文本的间距 */
+  }
+
+  .cvpr-title {
+    font-size: 1.2em;  /* 调整大小 */
+    font-weight: bold;  /* 保持加粗 */
+    color: #000000a2 !important;
+  }
+
+
+/* 增大按钮 */
+.button {
+  font-size: 10px;  /* 增大按钮文字大小 */
+  padding: 15px 30px;  /* 增加按钮的内边距，让按钮更大 */
+  height: 40px;  /* 增大按钮高度 */
+  width: auto;   /* 让按钮宽度根据内容自动调整 */
+}
+
+/* 增大图标 */
+.button .icon {
+  font-size: 30px;  /* 调整图标的大小，可以根据需要调整 */
+  margin-right: 0px; /* 增加图标与文本之间的间距 */
+}
+</style>
+
+
+
+<!-- Paper abstract with PDF -->
+<!-- <section class="section hero is-light" > -->
+<section class="section" style="background: none;">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract 文字部分 -->
+    <div class="has-text-left">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p style="font-size: 1.0em; margin: 0 auto;">
+          3D Gaussian Splatting (3DGS) techniques have recently enabled high-quality 3D scene reconstruction and real-time novel view synthesis. These approaches, however, are limited by the pinhole camera model and lack effective modeling of defocus effects. Departing from this, we introduce <strong>DOF-GS</strong>--a new 3DGS-based framework with a finite-aperture camera model and explicit, differentiable defocus rendering, enabling it to function as a post-capture control tool. By training with multi-view images with moderate defocus blur, DOF-GS learns inherent camera characteristics and reconstructs sharp details of the underlying scene, particularly, enabling rendering of varying DOF effects through on-demand aperture and focal distance control, post-capture and optimization. Additionally, our framework extracts circle-of-confusion cues during optimization to identify in-focus regions in input views, enhancing the reconstructed 3D scene details. Experimental results demonstrate that DOF-GS supports post-capture refocusing, adjustable defocus and high-quality all-in-focus rendering, from multi-view images with uncalibrated defocus blur.
+      </div>
+    </div>
+    <br>
+    <div style="height: 20px;"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <img src="static/images/dofgs_teaser.png" alt="Paper Preview" 
+           style="width: 100%; max-width: 1400px; height: auto;">
+    </div>
+
+
+
+  </div>
+</section>
+
+<section class="section hero is-light" style="background: linear-gradient(to bottom, #fffdfd00, #fffffeab);">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract 文字部分 -->
+    <div class="has-text-left">
+      <h2 class="title is-3">Video Presentation</h2>
+      <!-- <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/dofgs_overview.png" alt="Paper Preview" 
+             style="width: 100%; max-width: 1400px; height: auto;">
+      </div> -->
+      <div style="height: 20px;"></div>
+        <!-- MathJax 支持（放在<head>或<body>中任意位置一次即可） -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+      <!-- 正文部分 -->
+      <iframe width="960" height="540" src="https://www.youtube.com/embed/dJC9ztMqkLE?si=BtB2UAPYl7DtY-pJ" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+
+
+<!-- Paper abstract with PDF -->
+<section class="section hero is-light" style="background: linear-gradient(to bottom, #fffdfd00, #fffffeab);">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract 文字部分 -->
+    <div class="has-text-left">
+      <h2 class="title is-3">Pipeline Overview</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/dofgs_overview.png" alt="Paper Preview" 
+             style="width: 100%; max-width: 1400px; height: auto;">
+      </div>
+      <div style="height: 20px;"></div>
+        <!-- MathJax 支持（放在<head>或<body>中任意位置一次即可） -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+      <!-- 正文部分 -->
+      <div class="content has-text-justified" style="font-size: 1em; line-height: 1.6;">
+        <p>
+          <strong>Pipeline</strong> of the proposed DOF-GS. We start with camera poses and an initial sparse point cloud estimated from defocused images.
+          For each view, we introduce and initialize two learnable parameters: focal distance and aperture parameter.
+          During optimization, for each sampled view \( m \), we render a defocused image utilizing the DOF rendering scheme with camera parameters
+          \( \{f_m, Q_m\} \) to fit the target view.
+          Meanwhile, we render an All-in-Focus (AiF) image with the fixed aperture parameter \( Q^* \).
+          To enhance scene details by appropriate AiF image supervision, we introduce an In-Focus Localization Network that utilizes the rendered CoC map and other cues
+          to localize the in-focus regions within the target view.
+          The underlying 3D scene, camera parameters, and network parameters are updated via backpropagation.
+        </p>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Paper abstract with PDF -->
+<section class="section hero is-light" style="background: linear-gradient(to bottom, #fffdfd00, #fffffeab);">
+  <div class="container is-max-desktop">
+    <!-- Abstract 文字部分 -->
+    <div class="has-text-left">
+      <h2 class="title is-3">Differentiable DOF Renering</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/diff_dof_render.png" alt="Paper Preview" 
+             style="width: 100%; max-width: 1400px; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <div style="display: flex; justify-content: center; align-items: center;"></div>
+        <!-- <p style="font-size: 1.0em; margin: 0 auto;width: 100%; max-width: 1400px; height: auto;">
+          &nbsp;&nbsp;&nbsp;&nbsp;We propose a 3D frequency quantification method that analyzes the scene’s frequency distribution, enabling frequency-aware rendering. Our framework incorporates a frequency grid for fast convergence and querying, a frequency-aware feature re-weighting strategy to balance features across different frequency contents.
+        </p> -->
+      <div style="height: 20px;"></div>
+        <!-- 引入 MathJax -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+      <div class="content has-text-justified" style="font-size: 1.0em; line-height: 1.6;">
+        <p>
+          Illustration of the depth-of-field rendering and camera model.
+          During the DOF rendering (left), 3D Gaussians \( \mathcal{G}_k \) are projected to 2D screen space.
+          Each projected 2D Gaussian \( \mathcal{G}'_k \) is then convolved with a blur kernel, and the final color is composited from convolved Gaussians \( \mathcal{G}''_k \).
+          <em>White dashed lines highlight convolution effects.</em>
+          The blur kernel for each 2D Gaussian is determined by the radius of its Circle-of-Confusion (CoC),
+          which results from the finite-aperture camera model (right).
+          With the adopted camera model with an aperture parameter \( Q \), which is not a pinhole,
+          object points deviating from the focal distance \( f \) form a region, known as the CoC, rather than a point.
+        </p>
+      </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+
+<!-- Paper abstract with PDF -->
+<section class="section hero is-light" style="background: linear-gradient(to bottom, #fffdfd00, #fffffeab);">
+  <div class="container is-max-desktop">
+    <!-- Abstract 文字部分 -->
+    <div class="has-text-left">
+      <h2 class="title is-3">Post-Capture DOF Control</h2>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/dof_render_results.png" alt="Paper Preview" 
+             style="width: 100%; max-width: 1400px; height: auto;">
+      </div>
+      <div class="content has-text-justified">
+        <div style="display: flex; justify-content: center; align-items: center;"></div>
+        <!-- <p style="font-size: 1.0em; margin: 0 auto;width: 100%; max-width: 1400px; height: auto;">
+          &nbsp;&nbsp;&nbsp;&nbsp;We propose a 3D frequency quantification method that analyzes the scene’s frequency distribution, enabling frequency-aware rendering. Our framework incorporates a frequency grid for fast convergence and querying, a frequency-aware feature re-weighting strategy to balance features across different frequency contents.
+        </p> -->
+      <div style="height: 20px;"></div>
+        <!-- 引入 MathJax -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+      <div class="content has-text-justified" style="font-size: 1.0em; line-height: 1.6;">
+        <p>
+          DOF rendering results with post-capture aperture and focal distance control. Adjusting focal distance mainly affects locations of out-of-focus and in-focus regions (highlighted in pink), while increasing aperture parameter makes out-of-focus regions increasingly blurry.
+        </p>
+      </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+
+
+
+
+<!-- BibTeX citation -->
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{wang2024dofgs,
+    title={DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal​}, 
+    author={Yujie Wang, Praneeth Chakravarthula, Baoquan Chen},
+    year={2024},
+    eprint={2405.17351},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2405.17351}
+}</code></pre>
+  </div>
+</section> -->
+<!-- End BibTeX citation -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+
+    <!-- BibTeX 区块 -->
+    <div style="position: relative; margin-top: 1em;">
+
+        <!-- 浮动的图标+文字复制按钮 -->
+        <div onclick="copyBibtex()"
+        title="Copy BibTeX"
+        style="
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-size: 0.75em;
+          color: #555;
+          user-select: none;
+        ">
+        📋 <span style="margin-left: 4px;">Copy</span>
+        </div>
+
+
+      <!-- BibTeX 文本 -->
+      <pre id="bibtex-text" style="background: #f5f5f5; padding: 1em; border-radius: 6px; font-size: 0.95em;">
+          @misc{wang2024dofgs,
+            title={DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal},
+            author={Yujie Wang, Praneeth Chakravarthula, Baoquan Chen},
+            year={2024},
+            eprint={2405.17351},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV},
+            url={https://arxiv.org/abs/2405.17351}
+          }
+      </pre>
+    </div>
+
+    
+  </div>
+</section>
+
+<!-- JS 脚本 -->
+<script>
+  function copyBibtex() {
+    const text = document.getElementById("bibtex-text").innerText;
+    navigator.clipboard.writeText(text).then(function () {
+      alert("BibTeX copied to clipboard!");
+    }, function (err) {
+      alert("Failed to copy BibTeX.");
+    });
+  }
+</script>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adapted from <a href="https://coscatter.github.io/LookCloser/" target="_blank">LookCloser</a>.
+        Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

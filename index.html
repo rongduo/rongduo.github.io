@@ -1,773 +1,969 @@
 <!DOCTYPE html>
-<!-- saved from url=(0246)https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2 -->
-<html lang="en" class=" js csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yujie Wang - Computer Vision Researcher (蓝黑风格)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
+            --background-light: #f8fafc;
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="1000, initial-scale=1">
-<meta name="description" content="MyWork Resume">
-<meta name="keywords" content="resume bootstrap template, resume / cv html template, html5 / css3 resume">
-<meta name="author" content="KingStudio.ro">
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #334155 40%, #475569 60%, #64748b 80%, #cbd5e1 100%);
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
 
-<!-- favicon -->
-<link rel="icon" href="./yujie_home_files/images/tab_icon.png">
-<!-- page title -->
-<title> Yujie Wang </title>
-<!-- bootstrap css -->
-<link href="./yujie_home_files/bootstrap.min.css" rel="stylesheet">
-<!-- css -->
-<link href="./yujie_home_files/style.css" rel="stylesheet">
-<link href="./yujie_home_files/animate.css" rel="stylesheet">
-<link href="./yujie_home_files/owl.carousel.css" rel="stylesheet">
-<link href="./yujie_home_files/owl.theme.css" rel="stylesheet">
-<!-- fonts -->
-<link href="./yujie_home_files/css" rel="stylesheet">
-<link href="./yujie_home_files/css(1)" rel="stylesheet">
-<link href="./yujie_home_files/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="./yujie_home_files/FontAwesome.otf" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="./yujie_home_files/linear-icons.css">
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-<style>
-.image-container img {
-width: 350px;
-object-fit: fill ;
-}
-</style>    
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-decoration: none;
+        }
 
-<style>
-    .custom-link {
-      color: rgb(98, 98, 98);
-      text-decoration: none;
-    }
-  </style>
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
 
-<script type="text/javascript" src="./yujie_home_files/jquery-1.7.2.js"></script>
-	<script>
-		$(document).ready(function() {
-		  $('.nav-toggle').click(function(){
-			//get collapse content selector
-			var collapse_content_selector = $(this).attr('href');
-			//make the collapse content to be shown or hide
-			var toggle_switch = $(this);
-			$(collapse_content_selector).toggle(speed="slow");
-            return false;
-		  });
-		});
-	</script>
-</head>    
+        .nav-link:hover {
+            color: #1e40af;
+        }
 
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1e40af;
+            transition: width 0.3s ease;
+        }
 
-	
-<body class="main-demo top-nav" width="1350px">
-<div id="top" data-toggle="top"></div>
-<!-- navbar-default -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-    </div><!-- / navbar-header -->
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li class="active">
-                <a class="menu-item page-scroll" href="https://rongduo.github.io/index.html">Home</a>
-            </li>
-            <li>
-                <a class="menu-item page-scroll" href="https://rongduo.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#about">About</a>
-            </li>
-            <!--
-            <li>
-                <a class="menu-item page-scroll" href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#news">Recent</a>
-            </li> -->
-            <li>
-                <a class="menu-item page-scroll" href="https://rongduo.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#publications">Publications</a>
-            </li>
-            <!--
-            <li>
-                <a class="menu-item page-scroll" href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#otherprojects">Selected Projects</a>
-            </li>-->
-            <!--
-            <li>
-                <a class="menu-item page-scroll" href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#education">Education</a>
-            </li>-->
-            <li>
-                <a class="menu-item page-scroll" href="https://rongduo.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#experience">Experience</a>
-            </li>
-            <!--
-            <li>
-                <a class="menu-item page-scroll" href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#activities">Activities</a>
-            </li>-->
-            <li>
-                <a class="menu-item page-scroll" href="https://rongduo.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#honors">Awards</a>
-            </li>
-<!--
-            <li>
-                <a class="menu-item page-scroll" href="#portfolio">Portfolio</a>
-            </li>
--->
-            <!--
-            <li class="dropdown">
-            <a href="https://rongduo.github.io/LingjieLiu_CV.pdf"> Download CV </a>
-            </li> -->
-        </ul>
-    </div><!--/.nav-collapse -->
-</nav><!-- / navbar-default -->
-<!-- content -->
-    <div class="container">
-        <!-- header -->
-        <header id="home">
-            <div class="header-content">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img src="./yujie_home_files/images/my-img-yujie.jpg" alt="">
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 195px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 195px;
+            height: 195px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-info h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--background-light);
+            border-radius: 12px;
+        }
+
+        .contact-icon {
+            color: #1e40af;
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .about-text a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .about-text a:hover {
+            text-decoration: underline;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .research-tag {
+            background: rgba(30, 64, 175, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 64, 175, 0.3);
+            color: #1e40af;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .research-tag:hover {
+            background: rgba(30, 64, 175, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.2);
+        }
+
+        /* Publications */
+        .publication {
+            background: var(--background-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #1e40af;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .publication-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .publication-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: var(--background-light);
+            padding: 8px;
+        }
+
+        .publication-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .publication-authors {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-authors a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .publication-authors a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+
+        .publication-venue {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .publication-award {
+            background: rgba(245, 158, 11, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #d97706;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-award:hover {
+            background: rgba(245, 158, 11, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .publication-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .publication-link {
+            background: rgba(30, 64, 175, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(30, 64, 175, 0.25);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: rgba(30, 64, 175, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.15);
+            color: #1d4ed8;
+        }
+
+        /* Experience */
+        .experience-item {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.12);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .experience-date {
+            background: rgba(59, 130, 246, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #3b82f6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .experience-date:hover {
+            background: rgba(59, 130, 246, 0.25);
+        }
+
+        .experience-company {
+            font-size: 1rem;
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-location {
+            color: var(--text-medium);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(30, 64, 175, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border-top: 4px solid rgba(30, 64, 175, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.12);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-venue {
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: var(--text-light);
+        }
+
+        /* Floating Sidebar */
+        .floating-sidebar {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1rem 0.75rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(30, 64, 175, 0.1);
+            color: #1e40af;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .sidebar-item:hover {
+            background: #1e40af;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .sidebar-item .tooltip {
+            position: absolute;
+            right: 60px;
+            background: rgba(30, 64, 175, 0.9);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-item:hover .tooltip {
+            opacity: 1;
+        }
+
+        .back-to-top {
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .floating-sidebar {
+                display: none;
+            }
+        }
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-medium);
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #1e40af;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main-content {
+                max-width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+                justify-self: center;
+            }
+
+            .hero-info h1 {
+                font-size: 2rem;
+            }
+
+            .publication-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .publication-image {
+                height: 120px;
+                margin: 0 auto;
+                width: 100%;
+                max-width: none;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .experience-date {
+                align-self: flex-start;
+            }
+
+            .main-content {
+                padding: 1rem;
+                margin-top: 70px;
+            }
+
+            .section, .hero-section {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-info h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .publication-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .experience-role {
+                font-size: 1rem;
+            }
+            
+            .main-content {
+                padding: 0.75rem;
+            }
+            
+            .section, .hero-section {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Yujie Wang</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#awards" class="nav-link">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating Sidebar -->
+    <div class="floating-sidebar">
+        <a href="#home" class="sidebar-item">
+            <i class="fas fa-home"></i>
+            <span class="tooltip">Home</span>
+        </a>
+        <a href="#about" class="sidebar-item">
+            <i class="fas fa-user"></i>
+            <span class="tooltip">About</span>
+        </a>
+        <a href="#publications" class="sidebar-item">
+            <i class="fas fa-book"></i>
+            <span class="tooltip">Publications</span>
+        </a>
+        <a href="#experience" class="sidebar-item">
+            <i class="fas fa-briefcase"></i>
+            <span class="tooltip">Experience</span>
+        </a>
+        <a href="#awards" class="sidebar-item">
+            <i class="fas fa-trophy"></i>
+            <span class="tooltip">Awards</span>
+        </a>
+        <div class="sidebar-item back-to-top" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up"></i>
+            <span class="tooltip">Back to Top</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <img src="./yujie_home_files/images/my-img-yujie.jpg" alt="Yujie Wang" class="hero-image">
+                <div class="hero-info">
+                    <h1>Yujie Wang</h1>
+                    <div class="hero-title">Postdoctoral Researcher in Computer Science</div>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>yujiew.cn@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>UNC-Chapel Hill, North Carolina</span>
+                        </div>
                     </div>
-                    <div class="col-sm-9">
-                        <h2><font color="black">Yujie Wang</font></h2>
-                        <!-- <h5><font color="black">Postdoc</font></h5> -->
-                        <!--<p><font color="black"> Phone: +86 158 2202 9958</font></p>-->
-                        <p><font color="black">Email: yujiew.cn@gmail.com</font></p>
-                        <p><font color="black">Address: 201 S. Columbia St., UNC-Chapel Hill, North Carolina</font></p>
-                        <!--<p><font color="black">Address: Jingyuan Courtyard 5, Peking University, Beijing</font></p>-->
-                        <!-- 
-                        <div class="row">
-                            <div class="col-sm-2 feature-left space-top">
-                                <div class="feature block">
-                                    <div class="feature-icon">
-                                        <i class="lnr lnr-phone"></i>
-                                    </div>
-                                    <p>+852 5438-2502</p> 
-                                </div><!-- / feature-block 
-                            </div><!-- / col-md-6 feature-left 
-                            <div class="col-sm-2 feature-left space-top">
-                                <div class="feature block">
-                                    <div class="feature-icon">
-                                        <i class="lnr lnr-envelope"></i>
-                                    </div>
-                                    <p>liulingjie0206@gmail.com</p>
-                                </div><!-- / feature-block 
-                            </div><!-- / col-md-6 feature-left 
-                        </div><!-- / row 
-                        <div class="row">
-                            <div class="col-sm-7 feature-left space-top">
-                                <div class="feature block">
-                                    <div class="feature-icon">
-                                        <i class="lnr lnr-map-marker"></i>
-                                    </div>
-                                    <p>Room 401, Chow Yei Ching Building, The University oF Hong Kong, Hong Kong</p>
-                                </div><!-- / feature-block 
-                            </div><!-- / col-sm-6 feature-left
-                        </div><!-- / row -->
-                    </div>
-                </div><!-- / row -->
-            </div>
-        </header>
-        <!-- / header -->
-        
-        <section id="about">
-            <div class="container">
-                <div id="layout-content" style="margin-top: 25px; width: 80%;" class="page-header space-left">
-                    <h3>About Me.</h3>
-                    
-                    <p stype="text-align: justify color:black;">I am currently a postdoctoral researcher in Computer Science at the University of North Carolina at Chapel Hill, hosted by 
-                        <a href="https://www.cs.unc.edu/~cpk/">Prof. Praneeth Chakravarthula</a>. </p>
-                    <!--<a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>.</p>-->
-                    <p> I received my Ph.D. in 2024 from Shandong University, where I was supervised by <a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>, with most of my research conducted at the Visual Computing and Learning Lab (VCL), Peking University.</p>
-                    <p> Prior to that, I earned my M.S. from Tianjin University and completed my undergraduate studies at Sichuan University. </p>	
-            <!--    
-                    <p stype="text-align: justify;">I spent four months at New York University working with <a href="https://cims.nyu.edu/gcl/daniele.html"> Prof. Daniele Panozzo </a>. 
-		    Prior to that, I had a wonderful time visiting <a href="https://people.mpi-inf.mpg.de/~theobalt/">Prof. Christian Theobalt</a> at Max-Planck-Institute for Informatics, Saarbrucken, Germany. 
-		    I also spent great time at University College London under the supervision of <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/">Prof. Niloy J. Mitra</a>.
-            </p><p stype="text-align: justify;">Before starting my PhD, I obtained a Bachelor's Degree in the Department of Computer Science and Technology, Huazhong University of Science and Technology in 2014 and supervised by <a href="http://grid.hust.edu.cn/hjin/">Prof. Hai Jin</a>.
-                    </p>-->
-		    <p stype="text-align: justify;">My research interests lie in 3D scene reconstruction and generation, as well as computer-generated holography.
-		    </p>
-                <!-- / features -->
-		</div>
+                </div>
             </div>
         </section>
-        
 
-        <!--<div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
-
-
-        
-        <section id="news">
-            <div class="container">
-                <div style="margin-top: 25px; width: 80%;" class="page-header space-left">
-                    <h3>Recent News.</h3>
-			<h6>[May 2019] "MAT-Net: Medial Axis Transform Network for 3D Object Recognition" has been accepted by IJCAI'19. </h6>
-			<h6>[March 2019] "Neural Animation and Reenactment of Human Actor Videos" will be presented at SIGGRAPH 2019. </h6>
-			<h6>[Sept 2018] Check out a new <a href="https://shiropen.com/seamless/neural-animation-and-reenactment-of-human-actor-videos">media report</a> of our recent work "Neural Animation and Reenactment of Human Actor Videos" by Seamless. </h6>
-			<h6>[Sept 2018] Check our recent work "Neural Animation and Reenactment of Human Actor Videos". </h6>
-			<h6>[Sept 2018] Our paper "CurveFusion: Reconstructing Thin Structures from RGBD Sequences" has been conditionally accepted by SIGGRAPH Asia'18! </h6>
-                    	<h6>[Jul 2017] Check out a new <a href="https://www.eurekalert.org/pub_releases/2017-07/afcm-drw070617.php">interview</a> of our recent work "Image-based Reconstruction of Wire Art" by EurekAlert!</h6>
-                    	<h6>[Apr 2017] Our paper Image-based Reconstruction of Wire Art has been accepted by SIGGRAPH'17! See you in Los Angeles!</h6>
-                    
-                </div>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>I am currently a postdoctoral researcher in Computer Science at the University of North Carolina at Chapel Hill, hosted by <a href="https://www.cs.unc.edu/~cpk/">Prof. Praneeth Chakravarthula</a>.</p>
                 
+                <p>I received my Ph.D. in 2024 from Shandong University, where I was supervised by <a href="https://cfcs.pku.edu.cn/baoquan">Prof. Baoquan Chen</a>, with most of my research conducted at the Visual Computing and Learning Lab (VCL), Peking University.</p>
+                
+                <p>Prior to that, I earned my M.S. from Tianjin University and completed my undergraduate studies at Sichuan University.</p>
+                
+                <p>My research interests lie in 3D scene reconstruction and generation, as well as computer-generated holography.</p>
             </div>
-        </section>       -->
-
-        <div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
-        
-        <!-- journal -->
-        <section id="publications">
-            <div id="bibtex_display">
-            <div class="container">
-                <div class="page-header space-left">
-                    <h3>Publications.</h3>
-                </div>
-                <div class="timeline  border-color">
-                    
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/dof_gs.png"  height="140px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5> DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal</h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><i><b>Yujie Wang</b></i>,&nbsp;  <a href="https://www.cs.unc.edu/~cpk/"  class="custom-link">Praneeth Chakravarthula</a>&nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/"  class="custom-link">Baoquan Chen </a> </p>
-                        <p>The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</p>
-                        <a href="https://arxiv.org/abs/2405.17351">[Paper]</a>    
-                        <a href="./projects/dof_gs/">[Project page]</a>                 
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/canonicalizaition_figure.jpg"  height="140px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5> One-shot 3D Object Canonicalization based on Geometric and Semantic Consistency</h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><a href="" class="custom-link">Li Jin</a>,&nbsp; <i><b>Yujie Wang</b></i>,&nbsp;  <a href="https://wenzhengchen.github.io/"  class="custom-link">Wenzheng Chen</a>,&nbsp; <a href="https://daiqy.github.io/"  class="custom-link">Qiyu Dai</a>,&nbsp;  
-                            <a href="https://talegqz.github.io/"  class="custom-link">Qingzhe Gao</a>,&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/"  class="custom-link">Baoquan Chen </a>
-                            &nbsp; and &nbsp;<a href="https://vr.sdu.edu.cn/info/1010/1069.htm" class="custom-link">Xueyin Qin</a></p>
-                        <p>The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</p>
-                        <a href="xxx">[Paper]</a>  
-                        <a href="https://jinli998.github.io/One-shot_3D_Object_Canonicalization/">[Project Page]</a>   
-                        <a href="https://github.com/JinLi998/CanonObjaverseDataset">[Github Repo]</a>  
-                        <!-- <a href="https:/sss/">[Project page]</a>                  -->
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    
-
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/holo2022_representative.jpg" height="140px"></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5>Joint Neural Phase Retrieval and Compression for Energy- and Computation-Efficient Holography on the Edge</h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <h5 class="text-primary">Best Paper Honorable Mention</h5>
-                        <p><i><b>Yujie Wang*</b></i>,&nbsp; <a href="https://www.cs.unc.edu/~cpk/" class="custom-link">Praneeth Chakravarthula*</a>,&nbsp; <a href="https://qisun.me/" class="custom-link">Qi Sun &nbsp;</a> and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
-                        <p>ACM Transactions on Graphics (presented at SIGGRAPH 2022 and IEEE VIS 2022) </p>
-                        <a href="https://www.immersivecomputinglab.org/wp-content/uploads/2022/07/Hologram_compression_network_11-compressed.pdf">[Paper]</a>    
-                        <a href="https://github.com/HoloCompress/DPRC">[Code]</a>                 
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/singrav_teaser.png"  height="140px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5>SinGRAV: Learning a Generative Radiance Volume from a Single Natural Scene </h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://xuelin-chen.github.io/" class="custom-link">Xuelin Chen</a>&nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
-                        <p>Journal of Computer Science and Technology, 2024 (Arxiv, 2022.)</p>
-                        <a href="https://arxiv.org/pdf/2210.01202.pdf">[Paper]</a>    
-                        <a href="https://singrav.github.io/">[Project page]</a>                 
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/intrinsic_data.jpg"  height="130px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5>High Quality Rendered Dataset and Non-local Graph Convolutional Network for Intrinsic Image Decomposition </h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><i><b>Yujie Wang</b></i>,&nbsp; <a href="https://fqnchina.github.io/" class="custom-link">Qingnan Fan</a>,&nbsp; <a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li</a>,&nbsp; <a href="https://www.dongdongchen.bid/" class="custom-link">Dongdong Chen</a>,&nbsp; <a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a>,&nbsp; Jianzhi Lu,&nbsp; <a href="https://www.cs.huji.ac.il/~danix/" class="custom-link">Dani Lischinski</a> &nbsp;and&nbsp; <a href="https://cfcs.pku.edu.cn/baoquan/" class="custom-link">Baoquan Chen </a> </p>
-                        <p>Journal of Image and Graphics (Chinese), 2022</p>
-                        <a href="http://www.cjig.cn/jig/ch/reader/view_abstract.aspx?file_no=20220207">[Paper]</a>    
-                        <a href="https://github.com/rongduo/photorealistic_inrinsic_dataset">[Dataset and Bibtex]</a>        
-                        <a href="xxx">[Paper (PDF, English version)]</a>           
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/sparse_intrinsic.png"  height="130px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5>Sparse intrinsic decomposition and applications </h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <!-- <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5> -->
-                        <p><a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li*</a>,&nbsp;<i><b>Yujie Wang*</b></i>,&nbsp;<a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm" class="custom-link"> Xinchen Ye</a>,&nbsp; Chenggang Yan,&nbsp; and &nbsp;<a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a></p>
-                        <p>Signal Processing: Image Communication, 2021</p>
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0923596521001132">[Paper]</a>    
-                        <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation">[Code and Bibtex]</a>                  
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-
-                    <div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-2 timeline-info">
-                               <div class="image-container"><img src="./yujie_home_files/images/icme2017.jpg"  height="150px" alt=""></div>
-                            </div><!-- / timeline-info -->
-                            <div class="col-md-10 timeline-details">
-                                <h5>Intrinsic decomposition from a single RGB-D image with sparse and non-local priors </h5>
-                                <!--<h5>and non-local priors</h>-->
-                                <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>-->
-                        <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5>
-                        <p><i><b>Yujie Wang</b></i>,&nbsp;<a href="http://cs.tju.edu.cn/faculty/likun/index.htm" class="custom-link">Kun Li</a>,&nbsp;<a href="http://medialab-tju.org/" class="custom-link">Jingyu Yang</a> &nbsp; and &nbsp; <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm" class="custom-link"> Xinchen Ye </a></p>
-                        <p>IEEE International Conference on Multimedia and Expo, ICME 2017, Hongkong, China.</p>
-                        <a href="https://ieeexplore.ieee.org/document/8019390">[Paper]</a> 
-                        <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation">[Code]</a>                  
-                            </div><!-- / timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->
-                </div>
-            </div>
+            
+            <div class="research-tags">
+                <span class="research-tag">3D Scene Reconstruction & Generation</span>
+                <!-- <span class="research-tag">3D Scene Generation</span> -->
+                <span class="research-tag">Computer-Generated Holography</span>
+                <!-- <span class="research-tag">Computer Vision</span> -->
             </div>
         </section>
-        <!-- / journal -->
 
-    <!--    
-	<div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
-	
-        <section id="otherprojects">
-            <div id="bibtex_display">
-            <div class="container">
-                <div class="page-header space-left">
-                    <h3>Other Selected Projects.</h3>
-                </div>
-                <div class="timeline  border-color">
-				
-			<div class="timeline-item">
-                        <div class="row">
-                            <div class="col-md-9 timeline-details">
-                                <h5>Neural Human Video Rendering: Joint Learning of Dynamic Textures and Rendering-to-Video Translation </h5>
-                                <p>In progress</p>
-				<p stype="text-align: justify;"> Synthesizing realistic videos of humans using neural networks has been a popular alternative to the conventional graphics-based rendering pipeline due to its high efficiency.
-                        Existing works typically formulate this as an image-to-image translation problem in 2D screen space, which leads to artifacts such as over-smoothing, missing body parts, and temporal instability of fine-scale detail, such as pose-dependent wrinkles in the clothing. 
-					We are developing a novel human video synthesis method that approaches these limiting factors by explicitly disentangling the learning of time-coherent fine-scale details from the pose-dependent embedding of the human in 2D screen space.
-				</p>            
-			</div>--> <!-- / timeline-details -->
-            <!-- </div> --><!-- / row -->
-                    <!-- </div> --><!-- / timeline-item -->
-
-                    <!--
-                    <div class="timeline-item">
-                            <div class="row">
-                                <div class="col-md-9 timeline-details">
-                                    <h5>Point Cloud Reconstruction </h5>
-                                    <p>Joint project with the Hong Kong Applied Science and Technology Research Institute (ASTRI) with a total budget of 500,000 HKD </p>
-                </div> --><!-- / timeline-details -->
-                          <!-- </div> --><!-- / row -->
-                        <!-- </div> --><!-- / timeline-item -->
-
-
-                <!-- </div> -->
-           <!-- </div> -->
-            <!-- </div> -->
-        <!--</section> -->
-        <!-- / journal -->
-
-        <div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
-
-        <!-- education -->
-        <section id="experience">
-                <div class="container">
-                    <div class="page-header" style="text-indent:-0.5em;">
-                        <h3>Research Experience.</h3>
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/dof_gs.png" alt="DOF-GS" class="publication-image">
+                    <div class="publication-content">
+                        <h3>DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal</h3>
+                        <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
+                        <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2405.17351" class="publication-link">Paper</a>
+                            <a href="./projects/dof_gs/" class="publication-link">Project Page</a>
+                        </div>
                     </div>
-                    <div class="timeline  border-color">
-                        
-                    <div class="timeline-item">
-                            <div class="timeline-point  off-timeline-point  point-color"></div>
-                            <div class="row">
-                                <div class="col-md-3 timeline-info">
-                                    <p class="timeline-date">2024.12-</p>  
-                                    <h4 class="timeline-com">UNC-Chapel Hill, USA</h4>
-                                    <h6 class="timeline-role">Postdoctoral Researcher</h6>
-                                    <p class="timeline-location">Chapel Hill, North Carolina, USA</p>
-                                </div><!-- / timeline-info -->
-                                <!-- <div class="col-md-9 timeline-details">
-                                    <p>
-                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
-                                    </p>
-                                    <p>
-                                            Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
-                                    </p>
-                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
-                                </div>/ timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->  
-
-                        
-                    <div class="timeline-item">
-                            <div class="timeline-point  off-timeline-point  point-color"></div>
-                            <div class="row">
-                                <div class="col-md-3 timeline-info">
-                                    <p class="timeline-date">2024.04-2024.11</p>  
-                                    <h4 class="timeline-com">Peking University, China</h4>
-                                    <h6 class="timeline-role">Research Scholar</h6>
-                                    <p class="timeline-location">Beijing, China</p>
-                                </div><!-- / timeline-info -->
-                                <!-- <div class="col-md-9 timeline-details">
-                                    <p>
-                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
-                                    </p>
-                                    <p>
-                                            Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
-                                    </p>
-                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
-                                </div>/ timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->  
-
-                    <div class="timeline-item">
-                        <div class="timeline-point  off-timeline-point  point-color"></div>
-                            <div class="row">
-                                <div class="col-md-3 timeline-info">
-                                    <p class="timeline-date">2021.07-2024.03</p>  
-                                    <h4 class="timeline-com">Peking University, China</h4>
-                                    <h6 class="timeline-role">Visiting Student</h6>
-                                    <p class="timeline-location">Beijing, China</p>
-                                </div><!-- / timeline-info -->
-                                <!-- <div class="col-md-9 timeline-details">
-                                    <p>
-                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
-                                    </p>
-                                    <p>
-                                            Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
-                                    </p>
-                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
-                                </div>/ timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->  
-
-                    <div class="timeline-item">
-                        <div class="timeline-point  off-timeline-point  point-color"></div>
-                            <div class="row">
-                                <div class="col-md-3 timeline-info">
-                                    <p class="timeline-date">2018.07-2021.07</p>  
-                                    <h4 class="timeline-com">AICFVE Research</h4>
-                                    <h6 class="timeline-role">Intern</h6>
-                                    <p class="timeline-location">Beijing, China</p>
-                                </div><!-- / timeline-info -->
-                                <!-- <div class="col-md-9 timeline-details">
-                                    <p>
-                                        <b>Deep learning based single image intrinsic decomposition (Ongoing)</b>
-                                    </p>
-                                    <p>
-                                          Collaborating with <a href="https://fqnchina.github.io/"> Dr.Qingnan Fan</a> at Beijing Film Academy since July, 2018.
-                                    </p>
-                                    <p> Exploring more potentials of deep learning techniques to intrinsic decompositon task and aiming at leveraging <br> photorealistic computer generated data to boost the performance of this task as well as alleviating the domain <br> gap problem introduced by the difference between synthetic data and real world images.  
-                                </div>/ timeline-details -->
-                        </div><!-- / row -->
-                    </div><!-- / timeline-item -->    
-    
-   
-
-                    </div><!-- / timeline -->
-                </div><!-- / container -->
-            </section>
-            <!-- / education -->
-    
-            <div style="width:90%;height:1px;margin:0px auto;padding:1px;background-color:#D5D5D5;overflow:hidden;"></div>
-
-        <!-- honor -->
-        <section id="honors">
-            <div class="container">
-                <!-- <div class="row">
-                    <div class="col-md-4 feature-left space-bottom">
-                        <div class="feature block">
-                            <div class="feature-icon">
-                                <i class="lnr lnr-user"></i>
-                            </div>
-                            <h5>Full Name</h5>
-                        </div>
-                        <p>Lingjie Liu</p>
-                      </div><!-- / feature -->
-                    
-                      <!--
-                      <div class="col-md-4 feature-left space-bottom">
-                        <div class="feature block">
-                            <div class="feature-icon">
-                                <i class="lnr lnr-calendar-full"></i>
-                            </div>
-                            <h5>Bithdate</h5>
-                        </div>
-                        <p>Aug. 13, 1991</p>
-                      </div><!-- / feature -->
-                      <!--
-                      <div class="col-md-4 feature-left space-bottom">
-                        <div class="feature block">
-                            <div class="feature-icon">
-                                <i class="lnr lnr-map-marker"></i>
-                            </div>
-                            <h5>Address</h5>
-                        </div>
-                        <p>33 King Street, Miami, FL</p>
-                      </div><!-- / feature -->
-
-                <!-- </div>-- / row -->
-                <!-- / features -->
-
-                <!-- awards -->
-                <div class="page-header space-left" style="text-indent:-1em;">
-                    <h3>Awards.</h3>
                 </div>
-                <div class="row">
-                    <!--
-                    <div class="col-md-4">
-                        <div class="award">
-				            <h5 class="text-primary">Best Paper Honorable Mention</h5>
-                            <p>SIGGRAPH 2022 </p>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/canonicalizaition_figure.jpg" alt="Canonicalization" class="publication-image">
+                    <div class="publication-content">
+                        <h3>One-shot 3D Object Canonicalization based on Geometric and Semantic Consistency</h3>
+                        <div class="publication-authors">Li Jin, <strong>Yujie Wang</strong>, <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>, <a href="https://daiqy.github.io/">Qiyu Dai</a>, <a href="https://talegqz.github.io/">Qingzhe Gao</a>, <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a> and <a href="https://vr.sdu.edu.cn/info/1010/1069.htm">Xueyin Qin</a></div>
+                        <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</div>
+                        <div class="publication-links">
+                            <a href="#" class="publication-link">Paper</a>
+                            <a href="https://jinli998.github.io/One-shot_3D_Object_Canonicalization/" class="publication-link">Project Page</a>
+                            <a href="https://github.com/JinLi998/CanonObjaverseDataset" class="publication-link">Github Repo</a>
                         </div>
-                    </div>--><!-- / award -->
-
-                    <div class="col-md-4">
-                        <div class="award">
-				            <h5 class="text-primary">World’s FIRST 10K Best Paper Award</h5>
-                            <p>IEEE International Conference on Multimedia and Expo, ICME 2017 </p>
-                        </div>
-                    </div><!-- / award -->
-
-                    <div class="col-md-4">
-                        <div class="award">
-                            <h5 class="text-primary">National Scholarship</h5>
-                            <p>Ministry of Education of China</p>
-                            <p>2017</p>
-                        </div>
-                    </div><!-- / award -->
-                </div><!-- / row -->
-                <!-- / awards -->
-
-                <!-- facts -->
-                <!-- / facts -->
-
-                <!-- skills -->
-                <!-- <div id="skills">
-                    <div class="page-header space-left">
-                        <h3>Skills<span class="text-primary">.</span></h3>
                     </div>
-                    <div class="row">
-                        <!-- progress-bars left
-                        <div class="col-sm-6">
-                            <h6 class="progress-title">Photoshop</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                </div>
-                            </div><!-- / progress
-                            <h6 class="progress-title">Ilustrator</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                </div>
-                            </div><!-- / progress
-                            <h6 class="progress-title">Sketch</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                </div>
-                            </div><!-- / progress -->
-                        </div>
-                        <!-- / progress-bars left -->
-                        <!-- progress-bars right
-                        <div class="col-sm-6">
-                            <h6 class="progress-title">HTML5</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                </div>
-                            </div><!-- / progress 
-                            <h6 class="progress-title">CSS3</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                </div>
-                            </div><!-- / progress
-                            <h6 class="progress-title">SASS</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary animated fadeInLeft" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                </div>
-                            </div><!-- / progress 
-                        </div>
-                        <!-- / progress-bars right
-                    </div><!-- / row
                 </div>
-                <!-- / skills
-            </div><!-- / container -->
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/holo2022_representative.jpg" alt="Holography" class="publication-image">
+                    <div class="publication-content">
+                        <div class="publication-award">Best Paper Honorable Mention</div>
+                        <h3>Joint Neural Phase Retrieval and Compression for Energy- and Computation-Efficient Holography on the Edge</h3>
+                        <div class="publication-authors"><strong>Yujie Wang*</strong>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>, <a href="https://qisun.me/">Qi Sun</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
+                        <div class="publication-venue">ACM Transactions on Graphics (presented at SIGGRAPH 2022 and IEEE VIS 2022)</div>
+                        <div class="publication-links">
+                            <a href="https://www.immersivecomputinglab.org/wp-content/uploads/2022/07/Hologram_compression_network_11-compressed.pdf" class="publication-link">Paper</a>
+                            <a href="https://github.com/HoloCompress/DPRC" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/singrav_teaser.png" alt="SinGRAV" class="publication-image">
+                    <div class="publication-content">
+                        <h3>SinGRAV: Learning a Generative Radiance Volume from a Single Natural Scene</h3>
+                        <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="https://xuelin-chen.github.io/">Xuelin Chen</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
+                        <div class="publication-venue">Journal of Computer Science and Technology, 2024 (Arxiv, 2022.)</div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2210.01202.pdf" class="publication-link">Paper</a>
+                            <a href="https://singrav.github.io/" class="publication-link">Project Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/intrinsic_data.jpg" alt="Intrinsic Data" class="publication-image">
+                    <div class="publication-content">
+                        <h3>High Quality Rendered Dataset and Non-local Graph Convolutional Network for Intrinsic Image Decomposition</h3>
+                        <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="https://fqnchina.github.io/">Qingnan Fan</a>, <a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>, <a href="https://www.dongdongchen.bid/">Dongdong Chen</a>, <a href="http://medialab-tju.org/">Jingyu Yang</a>, Jianzhi Lu, <a href="https://www.cs.huji.ac.il/~danix/">Dani Lischinski</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
+                        <div class="publication-venue">Journal of Image and Graphics (Chinese), 2022</div>
+                        <div class="publication-links">
+                            <a href="http://www.cjig.cn/jig/ch/reader/view_abstract.aspx?file_no=20220207" class="publication-link">Paper</a>
+                            <a href="https://github.com/rongduo/photorealistic_inrinsic_dataset" class="publication-link">Dataset and Bibtex</a>
+                            <a href="#" class="publication-link">Paper (PDF, English version)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/sparse_intrinsic.png" alt="Sparse Intrinsic" class="publication-image">
+                    <div class="publication-content">
+                        <h3>Sparse intrinsic decomposition and applications</h3>
+                        <div class="publication-authors"><a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li*</a>, <strong>Yujie Wang*</strong>, <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm">Xinchen Ye</a>, Chenggang Yan, and <a href="http://medialab-tju.org/">Jingyu Yang</a></div>
+                        <div class="publication-venue">Signal Processing: Image Communication, 2021</div>
+                        <div class="publication-links">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0923596521001132" class="publication-link">Paper</a>
+                            <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation" class="publication-link">Code and Bibtex</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/icme2017.jpg" alt="ICME 2017" class="publication-image">
+                    <div class="publication-content">
+                        <div class="publication-award">World's FIRST 10K Best Paper Award</div>
+                        <h3>Intrinsic decomposition from a single RGB-D image with sparse and non-local priors</h3>
+                        <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>, <a href="http://medialab-tju.org/">Jingyu Yang</a> and <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm">Xinchen Ye</a></div>
+                        <div class="publication-venue">IEEE International Conference on Multimedia and Expo, ICME 2017, Hongkong, China.</div>
+                        <div class="publication-links">
+                            <a href="https://ieeexplore.ieee.org/document/8019390" class="publication-link">Paper</a>
+                            <a href="https://github.com/rongduo/Intrinsic_Decomp_implementation" class="publication-link">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <!-- / about -->
 
-        
-        <footer>
-            <div class="container">
-                <p class="footer-info">©Yujie's Homepage. The template is from <a href="https://lingjie0206.github.io/">Lingjie Liu</a>.
-                    <span class="social pull-right">
-                        <!--
-                        <a href="https://www.facebook.com/profile.php?id=100005961649379"><i class="fa fa-facebook"></i></a>
-                        <a href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#"><i class="fa fa-twitter"></i></a>
-                        <a href="https://lingjie0206.github.io/?nsukey=xHxqZQLPbK5eXNvQR48I%2FyLOnWsF6iZoFFMKDT1cUS3%2FcU7xE7DpmyDDtJPz%2BY4JBgWHkfpB4oqACpi%2Fmu6W2Wew%2FwYh3O0U6Y1pc0lm4FluoThorSBVmLbe%2Bt3ub7uQTBx3AI4%2FphvEs16xyaG2sRGMl24ywQGx3P%2FsGGtsnJjC5pZFH0u0V5836mWHkZH2#"><i class="fa fa-google-plus"></i></a>
-                        <a href="https://www.linkedin.com/in/lingjie-liu-04a496a5/"><i class="fa fa-linkedin"></i></a>-->
-                    </span>
-                </p>
-            </div><!-- / container -->
-        </footer><!-- / light-footer -->
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Research Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-role">Postdoctoral Researcher</div>
+                        <div class="experience-company">UNC-Chapel Hill, USA</div>
+                        <div class="experience-location">Chapel Hill, North Carolina, USA</div>
+                    </div>
+                    <div class="experience-date">2024.12 - Present</div>
+                </div>
+            </div>
 
-        <!-- scroll to top -->
-        <a href="https://rongduo.github.io#top" class="scroll-to-top page-scroll is-visible" data-nav-status="toggle"><i class="fa fa-angle-up"></i></a>
-        <!-- / scroll to top -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-role">Research Scholar</div>
+                        <div class="experience-company">Peking University, China</div>
+                        <div class="experience-location">Beijing, China</div>
+                    </div>
+                    <div class="experience-date">2024.04 - 2024.11</div>
+                </div>
+            </div>
 
-    </div><!-- / container-->
-<!-- / content -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-role">Visiting Student</div>
+                        <div class="experience-company">Peking University, China</div>
+                        <div class="experience-location">Beijing, China</div>
+                    </div>
+                    <div class="experience-date">2021.07 - 2024.03</div>
+                </div>
+            </div>
 
-<!-- javascript -->
-<script src="./yujie_home_files/jquery.min.js"></script>
-<script src="./yujie_home_files/bootstrap.min.js"></script>
-<script src="./yujie_home_files/jquery.easing.min.js"></script>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-role">Intern</div>
+                        <div class="experience-company">AICFVE Research</div>
+                        <div class="experience-location">Beijing, China</div>
+                    </div>
+                    <div class="experience-date">2018.07 - 2021.07</div>
+                </div>
+            </div>
+        </section>
 
-<script type="text/javascript" src="./yujie_home_files/bibtex_js.js" charset="utf-8"></script>
-<!--
-<bibtex src="lingjie.bib"></bibtex>
-<script>
-    $(function() {
-      $("#Fontselector").on("change",function() {
-        var font = $("#Fontselector option:selected").text();
-        console.log(font);
-        $('.title.fonters').each(function() {
-            $(this).css("font-family",font);
+        <!-- Awards Section -->
+        <section id="awards" class="section">
+            <h2 class="section-title">Awards</h2>
+            
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-title">World's FIRST 10K Best Paper Award</div>
+                    <div class="award-venue">IEEE International Conference on Multimedia and Expo, ICME 2017</div>
+                    <div class="award-year">2017</div>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-title">National Scholarship</div>
+                    <div class="award-venue">Ministry of Education of China</div>
+                    <div class="award-year">2017</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- <footer class="footer">
+            <p>© Yujie's Homepage. The template is inspired by <a href="https://lingjie0206.github.io/">Lingjie Liu</a>.</p>
+        </footer> -->
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-      }); 
-    });   
-    function reset() {
-        $("select").each(function () {
-          localStorage.setItem($(this).attr("id"),"");
-          $(this).val("");
-        }); 
-        $("#searchbar").val("");
-        $("#searchbar").trigger('change');
-    }
-</script>
-<style>
-    html,body,span,h1 {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 17px;
-    }
-    bibtex { display: none; }
-    .searchbar { margin-left:0px;}
-    #bibtex_errors { margin-top:10px; color: red;}
-    h1.header {margin-left:8px;}
-    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
-</style>
--->
 
-<!-- menu toggle script -->
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
-<!-- / menu toggle script -->
+        // Back to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
-<!-- nav scroll -->
-<script src="./yujie_home_files/scrolling-nav.js"></script>
-<script>
-$(".nav a").on("click", function(){
-   $(".nav").find(".active").removeClass("active");
-   $(this).parent().addClass("active");
-});
-</script>
-<!-- / nav scroll -->
+        // Add active class to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sidebarItems = document.querySelectorAll('.sidebar-item[href]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-<!-- contact form -->
-<script src="./yujie_home_files/validator.min.js" type="text/javascript"></script>
-<script src="./yujie_home_files/form-scripts.js" type="text/javascript"></script>
-<!-- / contact form -->
+            // Update navbar
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
 
-<!-- facts counter -->
-<script src="./yujie_home_files/jquery.countTo.js"></script>
- <script type="text/javascript">
-      $('.timer').countTo({
-        refreshInterval: 60,
-        formatter: function (value, options) {
-          return value.toFixed(options.decimals);
-        },
-      });
-</script>
-<!-- / facts counter -->
-
-<!-- portfolio script -->
-<script src="./yujie_home_files/jquery.shuffle.min.js"></script>
-<script src="./yujie_home_files/custom.js"></script>
-<!-- / portfolio script -->
-
-<!-- posts carousel -->
-<script src="./yujie_home_files/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function() {
-      $("#posts-carousel").owlCarousel({
-        items : 3,
-        itemsDesktop : [1099,3],
-        itemsDesktopSmall : [979,3]
-      });
-    });
-</script>
-<script src="./yujie_home_files/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function() {
-      $("#posts-carousel2").owlCarousel({
-        items : 3,
-        itemsDesktop : [1099,3],
-        itemsDesktopSmall : [979,3]
-      });
-    });
-</script>
-<!-- / posts carousel -->
-
-<!-- hide nav -->
-<script src="./yujie_home_files/hide-nav.js"></script>
-<!-- / hide nav -->
-
-<!-- / javascript -->
-
-
-
-</body></html>
+            // Update sidebar
+            sidebarItems.forEach(item => {
+                item.style.background = 'rgba(30, 64, 175, 0.1)';
+                item.style.color = '#1e40af';
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.style.background = '#1e40af';
+                    item.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
