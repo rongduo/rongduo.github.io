@@ -252,13 +252,22 @@
             align-items: start;
         }
 
-        .publication-image {
+        /* .publication-image {
             width: 100%;
-            height: 117.45px;
+            height: 117.45px; 
             object-fit: cover;
             border-radius: 10.44px;
             background: var(--background-light);
-            padding: 6.96px;
+            padding: 6.96px; 
+        } */
+
+        .publication-image {
+            height: 140px;         /* 固定宽度，比如200px */
+            width: 100%;         /* 高度自动按比例调整 */
+            object-fit: cover;    /* 仍然裁剪以保持填充效果（适用于固定容器） */
+            border-radius: 10.44px;
+            background: var(--background-light);
+            padding: 5.22px;
         }
 
         .publication-content h3 {
@@ -292,7 +301,7 @@
             margin-bottom: 0.6525rem;
             font-size: 0.8265rem;
         }
-
+/* 
         .publication-award {
             background: rgba(245, 158, 11, 0.15);
             backdrop-filter: blur(8px);
@@ -310,7 +319,37 @@
         .publication-award:hover {
             background: rgba(245, 158, 11, 0.25);
             transform: translateY(-0.87px);
+        } */
+
+        .publication-award {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+
+            /* 红色主题 */
+            color: #b91c1c; /* 深红文字 */
+            background: rgba(239, 68, 68, 0.12); /* 柔和的浅红背景 */
+            border: 1.5px solid rgba(239, 68, 68, 0.4);
+
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+
+            margin-bottom: 0.6rem; /* ← 这行控制“与标题之间的间距” */
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease-in-out;
         }
+
+        .publication-award:hover {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: rgba(239, 68, 68, 0.6);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+        }
+
+
 
         .publication-links {
             display: flex;
@@ -590,10 +629,11 @@
 
             .publication-image {
                 height: 104.4px;
+                /* height: 130.0px; */
                 margin: 0 auto;
                 width: 100%;
                 max-width: none;
-            }
+            } 
 
             .experience-header {
                 flex-direction: column;
@@ -747,8 +787,9 @@
                         <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
                         <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</div>
                         <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2210.01202.pdf" class="publication-link">Paper</a>
-                            <a href="https://singrav.github.io/" class="publication-link">Project Page</a>
+                            <a href="https://arxiv.org/pdf/2405.17351" class="publication-link">Paper</a>
+                            <a href="https://dof-gs.github.io/" class="publication-link">Project Page</a>
+                            <a href="https://github.com/rongduo/DOFGS_implementation" class="publication-link">Github Repo</a>
                         </div>
                     </div>
                 </div>
@@ -761,7 +802,7 @@
                         <div class="publication-authors">Li Jin, <strong>Yujie Wang</strong>, <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>, <a href="https://daiqy.github.io/">Qiyu Dai</a>, <a href="https://talegqz.github.io/">Qingzhe Gao</a>, <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a> and <a href="https://vr.sdu.edu.cn/info/1010/1069.htm">Xueyin Qin</a></div>
                         <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2025</div>
                         <div class="publication-links">
-                            <a href="#" class="publication-link">Paper</a>
+                            <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Jin_One-shot_3D_Object_Canonicalization_based_on_Geometric_and_Semantic_Consistency_CVPR_2025_paper.pdf" class="publication-link">Paper</a>
                             <a href="https://jinli998.github.io/One-shot_3D_Object_Canonicalization/" class="publication-link">Project Page</a>
                             <a href="https://github.com/JinLi998/CanonObjaverseDataset" class="publication-link">Github Repo</a>
                         </div>
@@ -769,11 +810,41 @@
                 </div>
             </div>
 
+       
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/holozip_pipe_new.png" alt="HoloZip" class="publication-image">
+                    <div class="publication-content">
+                        <h3>HoloZip: High Hologram Compression via Latent-of-Latent Coding</h3>
+                        <div class="publication-authors">Huaizhi Qu*, <strong>Yujie Wang*</strong>, Ruichen Zhang, Hengyu Lian, Mufan Qiu, Samarjit Chakraborty, Henry Fuchs, Tianlong Chen and Praneeth Chakravarthula</div>
+                        <div class="publication-venue">IEEE International Conference on Computational Photography (ICCP), 2025</div>
+                        <div class="publication-links">
+                            <a href="#" class="publication-link">Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/pupil_holo_captured1.png" alt="PupilAdaptive" class="publication-image">
+                    <div class="publication-content">
+                        <h3>Pupil-Adaptive 3D Holography Beyond Coherent Depth-of-Field</h3>
+                        <div class="publication-authors"><strong>Yujie Wang</strong>, Baoquan Chen and Praneeth Chakravarthula</div>
+                        <div class="publication-venue">Arxiv, 2024</div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2409.00028" class="publication-link">Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="publication">
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/holo2022_representative.jpg" alt="Holography" class="publication-image">
                     <div class="publication-content">
-                        <div class="publication-award">Best Paper Honorable Mention</div>
+                        <div class="publication-award">  <span class="award-icon" style="margin-right: 0.4em;">🏆</span> Best Paper Honorable Mention</div>
                         <h3>Joint Neural Phase Retrieval and Compression for Energy- and Computation-Efficient Holography on the Edge</h3>
                         <div class="publication-authors"><strong>Yujie Wang*</strong>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>, <a href="https://qisun.me/">Qi Sun</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
                         <div class="publication-venue">ACM Transactions on Graphics (presented at SIGGRAPH 2022 and IEEE VIS 2022)</div>
@@ -835,7 +906,7 @@
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/icme2017.jpg" alt="ICME 2017" class="publication-image">
                     <div class="publication-content">
-                        <div class="publication-award">World's FIRST 10K Best Paper Award</div>
+                        <div class="publication-award"> <span class="award-icon" style="margin-right: 0.4em;">🏆</span>  Best Paper Award</div>
                         <h3>Intrinsic decomposition from a single RGB-D image with sparse and non-local priors</h3>
                         <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>, <a href="http://medialab-tju.org/">Jingyu Yang</a> and <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm">Xinchen Ye</a></div>
                         <div class="publication-venue">IEEE International Conference on Multimedia and Expo, ICME 2017, Hongkong, China.</div>
