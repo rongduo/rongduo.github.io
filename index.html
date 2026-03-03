@@ -349,7 +349,54 @@
             box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
         }
 
+        /* ── Full Reviewer Score 专用徽章 ── */
+        /* 方案 A：橘色系（当前启用） */
+        /*.publication-unique-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            color: #c2410c;
+            background: rgba(234, 88, 12, 0.10);
+            border: 1.5px solid rgba(234, 88, 12, 0.35);
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            margin-bottom: 0.6rem;
+            box-shadow: 0 2px 6px rgba(234, 88, 12, 0.12);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease-in-out;
+        }
+        .publication-unique-tag:hover {
+            background: rgba(234, 88, 12, 0.22);
+            border-color: rgba(234, 88, 12, 0.55);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
+        }*/
 
+        /* 方案 B：浅蓝色系（如需启用，把 .publication-score 上面的两段注释掉，取消下面两段注释） */
+        .publication-unique-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            color: #0369a1;
+            background: rgba(14, 165, 233, 0.10);
+            border: 1.5px solid rgba(14, 165, 233, 0.35);
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            margin-bottom: 0.6rem;
+            box-shadow: 0 2px 6px rgba(14, 165, 233, 0.12);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s ease-in-out;
+        }
+       .publication-unique-tag:hover {
+            background: rgba(14, 165, 233, 0.22);
+            border-color: rgba(14, 165, 233, 0.55);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25);
+        } 
 
         .publication-links {
             display: flex;
@@ -779,6 +826,40 @@
         <section id="publications" class="section">
             <h2 class="section-title">Publications</h2>
             
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/Cosmo3d.png" alt="Canonicalization" class="publication-image">
+                    <div class="publication-content">
+                        <div class="publication-unique-tag"> <span class="award-icon" style="margin-right: 0.4em; font-size: 0.9rem;">⭐</span>Full Reviewer Score </div>
+                        <h3>One-shot 3D Object Canonicalization based on Geometric and Semantic Consistency</h3>
+                        <div class="publication-authors">Li Jin, Weikai Chen, <strong>Yujie Wang*</strong>, Yingda Yin, Zeyu Hu, Runze Zhang, Keyang Luo, Shengju Qian, Xin Wang and Xueying Qin</div>
+                        <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2026</div>
+                        <div class="publication-links">
+                            <!-- <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Jin_One-shot_3D_Object_Canonicalization_based_on_Geometric_and_Semantic_Consistency_CVPR_2025_paper.pdf" class="publication-link">Paper</a> -->
+                            <!-- <a href="https://jinli998.github.io/One-shot_3D_Object_Canonicalization/" class="publication-link">Project Page</a> -->
+                            <a href="https://github.com/JinLi998/CoSMo3D" class="publication-link">Github Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/metalens_hdr.png" alt="HoloZip" class="publication-image">
+                    <div class="publication-content">
+                        <h3>Enabling High-Quality In-the-Wild Imaging from Severely Aberrated Metalens Bursts</h3>
+                        <div class="publication-authors">Debabrata Mandal, Zhihan Peng,<strong>Yujie Wang </strong> and Praneeth Chakravarthula</div>
+                        <div class="publication-venue">The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026</div>
+                        <div class="publication-links">
+                            <a href="https://www.arxiv.org/pdf/2510.10083" class="publication-link">Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="publication">
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/dof_gs.png" alt="DOF-GS" class="publication-image">
@@ -813,20 +894,6 @@
        
             <div class="publication">
                 <div class="publication-grid">
-                    <img src="./yujie_home_files/images/metalens_hdr.png" alt="HoloZip" class="publication-image">
-                    <div class="publication-content">
-                        <h3>Enabling High-Quality In-the-Wild Imaging from Severely Aberrated Metalens Bursts</h3>
-                        <div class="publication-authors">Debabrata Mandal, Zhihan Peng,<strong>Yujie Wang </strong> and Praneeth Chakravarthula</div>
-                        <div class="publication-venue">The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026</div>
-                        <div class="publication-links">
-                            <a href="https://www.arxiv.org/pdf/2510.10083" class="publication-link">Paper</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="publication-grid">
                     <img src="./yujie_home_files/images/holozip_pipe_new.png" alt="HoloZip" class="publication-image">
                     <div class="publication-content">
                         <h3>HoloZip: High Hologram Compression via Latent-of-Latent Coding</h3>
@@ -859,7 +926,7 @@
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/holo2022_representative.jpg" alt="Holography" class="publication-image">
                     <div class="publication-content">
-                        <div class="publication-award">  <span class="award-icon" style="margin-right: 0.4em;">🏆</span> Best Paper Honorable Mention</div>
+                        <div class="publication-award">  <span class="award-icon" style="margin-right: 0.4em; font-size: 0.9rem;">🏆</span> Best Paper Honorable Mention</div>
                         <h3>Joint Neural Phase Retrieval and Compression for Energy- and Computation-Efficient Holography on the Edge</h3>
                         <div class="publication-authors"><strong>Yujie Wang*</strong>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>, <a href="https://qisun.me/">Qi Sun</a> and <a href="https://cfcs.pku.edu.cn/baoquan/">Baoquan Chen</a></div>
                         <div class="publication-venue">ACM Transactions on Graphics (presented at SIGGRAPH 2022 and IEEE VIS 2022)</div>
@@ -921,7 +988,7 @@
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/icme2017.jpg" alt="ICME 2017" class="publication-image">
                     <div class="publication-content">
-                        <div class="publication-award"> <span class="award-icon" style="margin-right: 0.4em;">🏆</span>  Best Paper Award</div>
+                        <div class="publication-award"> <span class="award-icon" style="margin-right: 0.4em; font-size: 0.9rem;">🏆</span>  Best Paper Award</div>
                         <h3>Intrinsic decomposition from a single RGB-D image with sparse and non-local priors</h3>
                         <div class="publication-authors"><strong>Yujie Wang</strong>, <a href="http://cs.tju.edu.cn/faculty/likun/index.htm">Kun Li</a>, <a href="http://medialab-tju.org/">Jingyu Yang</a> and <a href="http://faculty.dlut.edu.cn/yexinchen/en/index.htm">Xinchen Ye</a></div>
                         <div class="publication-venue">IEEE International Conference on Multimedia and Expo, ICME 2017, Hongkong, China.</div>
