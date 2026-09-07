@@ -27,6 +27,13 @@
             box-sizing: border-box;
         }
 
+        /* Render the whole page at 80% of its natural size on desktop */
+        @media (min-width: 769px) {
+            html {
+                zoom: 0.8;
+            }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
@@ -424,104 +431,89 @@
             color: #1d4ed8;
         }
 
-        .experience-item {
-            background: var(--background-light);
-            border-radius: 10.44px;
-            padding: 1.305rem;
-            margin-bottom: 0.87rem;
-            border-left: 3.48px solid #3b82f6;
-            transition: all 0.3s ease;
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2.5rem;
+            row-gap: 1.1rem;
         }
 
-        .experience-item:hover {
-            transform: translateY(-1.74px);
-            box-shadow: 0 3.48px 10.44px rgba(30, 64, 175, 0.12);
-        }
-
-        .experience-header {
+        .career-item {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.6525rem;
-            flex-wrap: wrap;
-            gap: 0.87rem;
+            gap: 0.8rem;
         }
 
-        .experience-role {
-            font-size: 0.957rem;
+        .career-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        /* 线稿类 logo 视觉上偏小，单独放大（不影响排版对齐） */
+        .career-logo--zoom {
+            transform: scale(1.35);
+        }
+
+        .career-role {
+            font-size: 0.9135rem;
             font-weight: 600;
             color: var(--text-dark);
+            line-height: 1.4;
         }
 
-        .experience-date {
-            background: rgba(59, 130, 246, 0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            color: #3b82f6;
-            padding: 0.174rem 0.522rem;
-            border-radius: 10.44px;
-            font-size: 0.7395rem;
-            font-weight: 600;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-        }
-
-        .experience-date:hover {
-            background: rgba(59, 130, 246, 0.25);
-        }
-
-        .experience-company {
-            font-size: 0.87rem;
-            color: #1e40af;
-            font-weight: 600;
-            margin-bottom: 0.174rem;
-        }
-
-        .experience-location {
+        .career-org {
+            font-size: 0.8265rem;
             color: var(--text-medium);
-            font-style: italic;
-            font-size: 0.783rem;
+            line-height: 1.45;
         }
 
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(243.6px, 1fr));
-            gap: 1.305rem;
+        .career-date {
+            font-size: 0.7395rem;
+            color: var(--text-light);
+            margin-top: 0.1rem;
         }
 
-        .award-item {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(30, 64, 175, 0.2);
-            border-radius: 13.92px;
-            padding: 1.5225rem;
-            text-align: center;
-            border-top: 3.48px solid rgba(30, 64, 175, 0.6);
-            transition: all 0.3s ease;
+        .awards-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .award-item:hover {
-            transform: translateY(-3.48px);
-            box-shadow: 0 6.96px 21.75px rgba(30, 64, 175, 0.12);
-            background: rgba(255, 255, 255, 0.8);
+        .awards-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-medium);
+            font-size: 0.9135rem;
+            line-height: 1.65;
+        }
+
+        .awards-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .awards-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #1e40af;
         }
 
         .award-title {
-            font-size: 1.0005rem;
             font-weight: 600;
             color: #1e40af;
-            margin-bottom: 0.6525rem;
-        }
-
-        .award-venue {
-            color: var(--text-medium);
-            margin-bottom: 0.435rem;
-            font-size: 0.8265rem;
         }
 
         .award-year {
             color: var(--text-light);
-            font-size: 0.87rem;
         }
 
         .floating-sidebar {
@@ -682,14 +674,9 @@
                 max-width: none;
             } 
 
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.435rem;
-            }
-
-            .experience-date {
-                align-self: flex-start;
+            .career-grid {
+                grid-template-columns: 1fr;
+                row-gap: 0.9rem;
             }
 
             .section, .hero-section {
@@ -706,9 +693,8 @@
                 font-size: 1.74rem;
             }
 
-            .awards-grid {
-                grid-template-columns: 1fr;
-                gap: 1.305rem;
+            .awards-list li {
+                font-size: 0.87rem;
             }
         }
 
@@ -729,7 +715,7 @@
                 font-size: 0.957rem;
             }
             
-            .experience-role {
+            .career-role {
                 font-size: 0.87rem;
             }
             
@@ -751,8 +737,8 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#awards" class="nav-link">Awards</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
             </ul>
         </div>
     </nav>
@@ -770,13 +756,13 @@
             <i class="fas fa-book"></i>
             <span class="tooltip">Publications</span>
         </a>
-        <a href="#experience" class="sidebar-item">
-            <i class="fas fa-briefcase"></i>
-            <span class="tooltip">Experience</span>
-        </a>
         <a href="#awards" class="sidebar-item">
             <i class="fas fa-trophy"></i>
             <span class="tooltip">Awards</span>
+        </a>
+        <a href="#experience" class="sidebar-item">
+            <i class="fas fa-briefcase"></i>
+            <span class="tooltip">Experience</span>
         </a>
         <div class="sidebar-item back-to-top" onclick="scrollToTop()">
             <i class="fas fa-chevron-up"></i>
@@ -825,15 +811,34 @@
 
         <section id="publications" class="section">
             <h2 class="section-title">Publications</h2>
-            
+            <div class="publication-note" style="color: var(--text-light); font-size: 0.78rem; margin-bottom: 1.2rem;">* Co-first author&nbsp;&nbsp;&nbsp;&nbsp;† Co-corresponding author</div>
+
+
+            <div class="publication">
+                <div class="publication-grid">
+                    <img src="./yujie_home_files/images/canoverse_teaser.png" alt="CanoVerse" class="publication-image">
+                    <div class="publication-content">
+                        <h3>CanoVerse: 3D Object Scalable Canonicalization and Dataset for Generation and Pose</h3>
+                        <div class="publication-authors">Li Jin, Yuchen Yang, Weikai Chen†, <strong>Yujie Wang†</strong>, Dehao Hao, Tanghui Jia, Yingda Yin, Zeyu Hu, Runze Zhang, Keyang Luo, Li Yuan, Long Quan, Xin Wang and Xueying Qin†</div>
+                        <div class="publication-venue">The European Conference on Computer Vision (ECCV), 2026</div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2603.07144" class="publication-link">Paper</a>
+                            <a href="https://github.com/123321456-gif/Canoverse" class="publication-link">Dataset</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
             <div class="publication">
                 <div class="publication-grid">
                     <img src="./yujie_home_files/images/Cosmo3d.png" alt="Canonicalization" class="publication-image">
                     <div class="publication-content">
+                        <div class="publication-award" style="display: inline-flex; align-items: center; margin-right: 0.4rem;"> <span class="award-icon" style="margin-right: 0.1em; font-size: 0.9rem; line-height: 1;">🏆</span>Award Candidate </div>
                         <div class="publication-unique-tag" style="display: inline-flex; align-items: center;"> <span class="award-icon" style="margin-right: 0.1em; font-size: 0.9rem; line-height: 1;">⭐</span>Full Reviewer Score </div>
                         <h3>CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling</h3>
-                        <div class="publication-authors">Li Jin, Weikai Chen, <strong>Yujie Wang*</strong>, Yingda Yin, Zeyu Hu, Runze Zhang, Keyang Luo, Shengju Qian, Xin Wang and Xueying Qin</div>
+                        <div class="publication-authors">Li Jin, Weikai Chen, <strong>Yujie Wang†</strong>, Yingda Yin, Zeyu Hu, Runze Zhang, Keyang Luo, Shengju Qian, Xin Wang and Xueying Qin†</div>
                         <div class="publication-venue">The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2026</div>
                         <div class="publication-links">
                             <a href="https://arxiv.org/pdf/2603.01205" class="publication-link">Paper</a>
@@ -1003,67 +1008,55 @@
 
         </section>
 
+        <section id="awards" class="section">
+            <h2 class="section-title">Awards &amp; Honors</h2>
+
+            <ul class="awards-list">
+                <li><span class="award-title">Award Candidate</span>, IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), <span class="award-year">2026</span></li>
+                <li><span class="award-title">Best Paper Honorable Mention</span>, ACM SIGGRAPH, <span class="award-year">2022</span></li>
+                <li><span class="award-title">World's FIRST 10K Best Paper Award</span>, IEEE International Conference on Multimedia and Expo (ICME), <span class="award-year">2017</span></li>
+                <li><span class="award-title">National Scholarship</span>, Ministry of Education of China</li>
+            </ul>
+        </section>
+
         <section id="experience" class="section">
             <h2 class="section-title">Research Experience</h2>
             
-            <div class="experience-item">
-                <div class="experience-header">
+            <div class="career-grid">
+                <div class="career-item">
+                    <img src="./yujie_home_files/images/logos/unc.png" alt="UNC-Chapel Hill" class="career-logo" onerror="this.style.display='none'">
                     <div>
-                        <div class="experience-role">Postdoctoral Researcher</div>
-                        <div class="experience-company">UNC-Chapel Hill, USA</div>
-                        <div class="experience-location">Chapel Hill, North Carolina, USA</div>
+                        <div class="career-role">Postdoctoral Researcher</div>
+                        <div class="career-org">UNC-Chapel Hill, Chapel Hill, USA</div>
+                        <div class="career-date">2024.12 - Present</div>
                     </div>
-                    <div class="experience-date">2024.12 - Present</div>
                 </div>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
+                <div class="career-item">
+                    <img src="./yujie_home_files/images/logos/pku.png" alt="Peking University" class="career-logo" onerror="this.style.display='none'">
                     <div>
-                        <div class="experience-role">Research Scholar</div>
-                        <div class="experience-company">Peking University, China</div>
-                        <div class="experience-location">Beijing, China</div>
+                        <div class="career-role">Research Scholar</div>
+                        <div class="career-org">Peking University, Beijing, China</div>
+                        <div class="career-date">2024.04 - 2024.11</div>
                     </div>
-                    <div class="experience-date">2024.04 - 2024.11</div>
                 </div>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
+                <div class="career-item">
+                    <img src="./yujie_home_files/images/logos/pku.png" alt="Peking University" class="career-logo" onerror="this.style.display='none'">
                     <div>
-                        <div class="experience-role">Visiting Student</div>
-                        <div class="experience-company">Peking University, China</div>
-                        <div class="experience-location">Beijing, China</div>
+                        <div class="career-role">Visiting Student</div>
+                        <div class="career-org">Peking University, Beijing, China</div>
+                        <div class="career-date">2021.07 - 2024.03</div>
                     </div>
-                    <div class="experience-date">2021.07 - 2024.03</div>
                 </div>
-            </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
+                <div class="career-item">
+                    <img src="./yujie_home_files/images/logos/aicfve.png" alt="AICFVE Research" class="career-logo career-logo--zoom" onerror="this.style.display='none'">
                     <div>
-                        <div class="experience-role">Intern</div>
-                        <div class="experience-company">AICFVE Research</div>
-                        <div class="experience-location">Beijing, China</div>
+                        <div class="career-role">Intern</div>
+                        <div class="career-org">AICFVE Research, Beijing, China</div>
+                        <div class="career-date">2018.07 - 2021.07</div>
                     </div>
-                    <div class="experience-date">2018.07 - 2021.07</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="awards" class="section">
-            <h2 class="section-title">Awards</h2>
-            
-            <div class="awards-grid">
-                <div class="award-item">
-                    <div class="award-title">World's FIRST 10K Best Paper Award</div>
-                    <div class="award-venue">IEEE International Conference on Multimedia and Expo, ICME 2017</div>
-                    <div class="award-year">2017</div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-title">National Scholarship</div>
-                    <div class="award-venue">Ministry of Education of China</div>
                 </div>
             </div>
         </section>
