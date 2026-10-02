@@ -159,7 +159,7 @@ figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; 
 /* ---------- methodology cards ---------- */
 
 .lead-copy {
-  max-width: 760px;
+  max-width: 1000px;
   margin: 0 auto 1.6rem;
   text-align: center;
 }
@@ -219,7 +219,7 @@ figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; 
 .panel[hidden] { display: none; }
 
 .panel-text {
-  max-width: 780px;
+  max-width: 1000px;
   margin: 0 auto 1.2rem;
   font-size: 0.98rem;
   line-height: 1.7;
