@@ -206,30 +206,13 @@
 
     <div class="content body-copy">
       <p>
-        Every wave contributor emits a subhologram whose footprint grows with reconstruction depth,
-        so neighbouring contributors overlap heavily on the SLM. A direct scatter implementation
-        therefore fires many concurrent atomic additions at the same pixels, and
-        <strong>memory contention &mdash; not arithmetic &mdash; becomes the dominant
-        bottleneck</strong>. Aggregating volumetric interactions into one segment-level virtual
-        source reduces the number of contributors, but the scatter pattern itself remains.
-      </p>
-      <p>
-        WaveCast removes the contention by <strong>reversing the accumulation order</strong>.
-        Instead of each emitter scattering into every pixel of its footprint, each SLM tile gathers
-        only from the emitters whose footprints overlap it. The pipeline runs in four steps: buffer
-        the segment-level and surface emitters per pixel; bin each emitter into the tiles its
-        subhologram support touches, bounded conservatively by the red-channel radius since it is
-        the largest across wavelengths; sort the resulting
-        <code>(tile_id, emitter_idx)</code> pairs by tile so each tile&rsquo;s emitters are
-        contiguous in memory; then gather in parallel, one CUDA block per tile, streaming that
-        tile&rsquo;s emitter list through shared memory while each thread accumulates its pixel in
-        registers and writes to global memory exactly once.
-      </p>
-      <p>
-        This is a pure reorganization &mdash; the coherent superposition is unchanged, so
-        Mode&nbsp;3 reproduces Mode&nbsp;2 <em>identically</em> while running two orders of
-        magnitude faster. Surface and volumetric emitters share the same bin&ndash;sort&ndash;gather
-        pipeline, producing the complete hybrid hologram in a single pass.
+        Subhologram footprints grow with reconstruction depth and overlap heavily on the SLM, so a
+        scatter implementation drowns in concurrent atomic writes to the same pixels &mdash;
+        <strong>contention, not arithmetic, is the bottleneck</strong>. WaveCast reverses the
+        accumulation: rather than each emitter scattering into its footprint, each SLM tile gathers
+        only the emitters that overlap it, binned and sorted by tile so one CUDA block can process
+        each tile independently. The reordering is exact, so Mode&nbsp;3 reproduces Mode&nbsp;2
+        identically while running two orders of magnitude faster.
       </p>
     </div>
 
