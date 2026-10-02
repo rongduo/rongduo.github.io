@@ -141,22 +141,13 @@
     </div>
 
     <div class="columns is-centered" style="margin-top:0.5rem">
-      <div class="column">
-        <div class="stat-box">
-          <div class="num">25.31 dB</div>
-          <div class="lab">Average AIF PSNR across seven Mip-NeRF&nbsp;360 scenes, the best among all compared pipelines</div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="stat-box">
-          <div class="num">0.09 s</div>
-          <div class="lab">Per-view hologram synthesis at 1536&times;1024, over 7&times;10<sup>4</sup> faster than the strongest baseline</div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="stat-box">
-          <div class="num">92 ms</div>
-          <div class="lab">Tiled gather accumulation (Mode&nbsp;3), down from 9.32&nbsp;s for per-hit scatter</div>
+      <div class="column is-half">
+        <div class="stat-box has-text-centered">
+          <div class="num">0.09 s per view</div>
+          <div class="lab">
+            HD-resolution (1536&times;1024) colour holograms at roughly 10&nbsp;fps on a single
+            RTX&nbsp;4090
+          </div>
         </div>
       </div>
     </div>
