@@ -9,6 +9,9 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* widen the content column: Bulma's is-max-desktop is 960px */
+.container.is-max-desktop { max-width: 1123px; }
+
 /* ---------- floating side nav ---------- */
 
 .sidenav {
