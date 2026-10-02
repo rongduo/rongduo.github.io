@@ -315,24 +315,27 @@
       </div>
     </div>
 
-    <div class="content body-copy">
-      <p>
-        Because WaveCast requires no per-scene optimization, virtual assets can be inserted, moved
-        and re-parameterized while holograms are regenerated on the fly. Below, mesh objects are
-        transformed and their material properties &mdash; including refractive index &mdash; are
-        edited live, with the hologram and its reconstruction preview updating interactively.
-      </p>
+    <div class="columns is-vcentered">
+      <div class="column is-half">
+        <div class="content body-copy">
+          <p>
+            Because WaveCast requires no per-scene optimization, virtual assets can be inserted,
+            moved and re-parameterized while holograms are regenerated on the fly. Mesh objects are
+            transformed and their material properties &mdash; including refractive index &mdash; are
+            edited live, with the hologram and its reconstruction preview updating interactively.
+          </p>
+        </div>
+        <p class="fig-caption">
+          The control panel toggles hologram rendering, switches the display between subhologram /
+          amplitude / phase / reconstruction, and sets the hologram depth range and the
+          reconstruction preview depth.
+        </p>
+      </div>
+      <div class="column is-half">
+        <video src="./static/videos/interactive_gui.mp4" autoplay loop muted playsinline controls
+               preload="metadata" style="width:100%;display:block;border-radius:6px;background:#000"></video>
+      </div>
     </div>
-
-    <figure class="fig" style="margin-top:1.2rem">
-      <video src="./static/videos/interactive_gui.mp4" autoplay loop muted playsinline controls preload="metadata"
-             style="width:100%;border-radius:6px;background:#000"></video>
-      <p class="fig-caption">
-        Live editing session. The control panel toggles hologram rendering, switches the display
-        between subhologram / amplitude / phase / reconstruction, and sets the hologram depth range
-        and the reconstruction preview depth.
-      </p>
-    </figure>
   </div>
 </section>
 
