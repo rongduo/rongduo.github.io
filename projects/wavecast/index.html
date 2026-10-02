@@ -202,17 +202,34 @@
       </p>
     </figure>
 
-    <h3 class="title is-5" style="margin-top:2.2rem">Two accelerations make it interactive</h3>
+    <h3 class="title is-5" style="margin-top:2.2rem">Tile-based subhologram gather</h3>
 
     <div class="content body-copy">
       <p>
-        A naive implementation emits one wave contributor per ray hit, which is far too slow at HD
-        resolution. WaveCast introduces a <strong>segment-level virtual source</strong> that
-        approximates many volumetric interactions within a ray segment using a single equivalent
-        emitter while preserving the dominant transmittance and depth structure, and a
-        <strong>tile-based gather-style CUDA kernel</strong> that reorganizes accumulation around SLM
-        tiles, avoiding the atomic-write contention produced by many overlapping subhologram
-        footprints.
+        Every wave contributor emits a subhologram whose footprint grows with reconstruction depth,
+        so neighbouring contributors overlap heavily on the SLM. A direct scatter implementation
+        therefore fires many concurrent atomic additions at the same pixels, and
+        <strong>memory contention &mdash; not arithmetic &mdash; becomes the dominant
+        bottleneck</strong>. Aggregating volumetric interactions into one segment-level virtual
+        source reduces the number of contributors, but the scatter pattern itself remains.
+      </p>
+      <p>
+        WaveCast removes the contention by <strong>reversing the accumulation order</strong>.
+        Instead of each emitter scattering into every pixel of its footprint, each SLM tile gathers
+        only from the emitters whose footprints overlap it. The pipeline runs in four steps: buffer
+        the segment-level and surface emitters per pixel; bin each emitter into the tiles its
+        subhologram support touches, bounded conservatively by the red-channel radius since it is
+        the largest across wavelengths; sort the resulting
+        <code>(tile_id, emitter_idx)</code> pairs by tile so each tile&rsquo;s emitters are
+        contiguous in memory; then gather in parallel, one CUDA block per tile, streaming that
+        tile&rsquo;s emitter list through shared memory while each thread accumulates its pixel in
+        registers and writes to global memory exactly once.
+      </p>
+      <p>
+        This is a pure reorganization &mdash; the coherent superposition is unchanged, so
+        Mode&nbsp;3 reproduces Mode&nbsp;2 <em>identically</em> while running two orders of
+        magnitude faster. Surface and volumetric emitters share the same bin&ndash;sort&ndash;gather
+        pipeline, producing the complete hybrid hologram in a single pass.
       </p>
     </div>
 

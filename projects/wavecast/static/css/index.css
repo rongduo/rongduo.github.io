@@ -68,6 +68,14 @@ body {
 
 .body-copy strong { color: #363636; }
 
+.body-copy code {
+  background: #f2f4f6;
+  color: #4a4a4a;
+  font-size: 0.86em;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
 figure.fig { margin: 0; }
 
 figure.fig img { width: 100%; height: auto; display: block; }
