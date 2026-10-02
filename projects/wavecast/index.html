@@ -211,21 +211,12 @@
         <strong>contention, not arithmetic, is the bottleneck</strong>. WaveCast reverses the
         accumulation: rather than each emitter scattering into its footprint, each SLM tile gathers
         only the emitters that overlap it, binned and sorted by tile so one CUDA block can process
-        each tile independently. The reordering is exact, so Mode&nbsp;3 reproduces Mode&nbsp;2
-        identically while running two orders of magnitude faster.
+        each tile independently.
       </p>
     </div>
 
     <figure class="fig" style="margin-top:1.2rem">
       <img src="./static/images/tiled_gather.png" alt="Tile-based gather-style subhologram accumulation on the SLM plane." loading="lazy">
-      <p class="fig-caption">
-        <strong>Tile-based gather accumulation.</strong> From the per-pixel emitter buffer, each
-        emitter is assigned to the SLM tiles overlapped by its diffraction-limited footprint, forming
-        tile&ndash;emitter pairs. After sorting by tile index, emitters for the same tile become
-        contiguous and are loaded by a tile-wise gather kernel that accumulates complex wave
-        contributions in shared memory. This converts wave accumulation into pixel-centric gathering,
-        avoiding atomic-write contention.
-      </p>
     </figure>
 
     <h3 class="title is-5" style="margin-top:2.2rem">Three execution modes</h3>
