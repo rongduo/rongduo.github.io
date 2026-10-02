@@ -197,55 +197,58 @@ table.modes td.rt {
     contain: inline-size;
     padding-bottom: 4px;
   }
-  .panel-text { text-align: left; }
+    .panel-text { text-align: left; }
 }
 
-/* ---------- result video grid ---------- */
+/* ---------- captured results: two columns, scene tabs inside each ---------- */
 
-.vgrid {
+.scene-cols {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-@media screen and (max-width: 768px) { .vgrid { grid-template-columns: 1fr; } }
+@media screen and (max-width: 768px) {
+  .scene-cols { grid-template-columns: 1fr; gap: 32px; }
+}
 
-.vcell { margin: 0; }
+.col-head {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e6e6e6;
+}
 
-.vcell video {
+.cardstrip.cardstrip-mini {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.card.card-mini {
+  min-height: 0;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #55606e;
+}
+
+.card.card-mini.is-active { color: #1f6f63; }
+
+.panel.panel-tight { margin-top: 0.8rem; }
+
+.panel-tight video {
   width: 100%;
   display: block;
   border-radius: 6px;
   background: #000;
-}
-
-.vcell .vlabel {
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: #363636;
-  margin-top: 0.5rem;
-}
-
-.vcell .vsub {
-  font-size: 0.82rem;
-  color: #777;
-  margin-top: 0.15rem;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.group-label {
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #8a8a8a;
-  margin: 1.6rem 0 0.7rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid #e6e6e6;
-  text-align: left;
 }
 
 /* ---------- comparison grid (rebuilt from the paper figures) ---------- */

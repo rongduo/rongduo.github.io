@@ -241,39 +241,57 @@
       </p>
     </div>
 
-    <div class="group-label">Hybrid real&ndash;virtual scenes</div>
-    <div class="vgrid">
-      <figure class="vcell">
-        <video src="./static/videos/hybrid_bicycle.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Bicycle</div>
-        <div class="vsub">Mirror inserted into a real 3DGS capture; the reflected content focuses at its mirrored depth, not the mirror&rsquo;s.</div>
-      </figure>
-      <figure class="vcell">
-        <video src="./static/videos/hybrid_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Garden</div>
-        <div class="vsub">Refractive glass sphere and diffuse mesh assets composited with the real scene.</div>
-      </figure>
-      <figure class="vcell">
-        <video src="./static/videos/hybrid_counter.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Counter</div>
-        <div class="vsub">Dense indoor scene with inserted virtual objects and view-dependent occlusion.</div>
-      </figure>
-    </div>
-
-    <div class="group-label">Single-primitive 3DGS scenes</div>
-    <div class="vgrid">
-      <figure class="vcell">
-        <video src="./static/videos/gs_bonsai.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Bonsai</div>
-      </figure>
-      <figure class="vcell">
-        <video src="./static/videos/gs_bicycle.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Bicycle</div>
-      </figure>
-      <figure class="vcell">
-        <video src="./static/videos/gs_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        <div class="vlabel">Garden</div>
-      </figure>
+    <div class="scene-cols">
+      <div class="scene-col">
+        <div class="col-head">Hybrid real&ndash;virtual scenes</div>
+        <div class="cards" data-cards>
+          <div class="cardstrip cardstrip-mini" role="tablist" aria-label="Hybrid real&ndash;virtual scenes">
+          <button class="card card-mini" role="tab" id="tab-h-bicycle"
+                  aria-controls="panel-h-bicycle" aria-selected="true">Bicycle</button>
+          <button class="card card-mini" role="tab" id="tab-h-garden"
+                  aria-controls="panel-h-garden" aria-selected="false">Garden</button>
+          <button class="card card-mini" role="tab" id="tab-h-counter"
+                  aria-controls="panel-h-counter" aria-selected="false">Counter</button>
+          </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-h-bicycle"
+             aria-labelledby="tab-h-bicycle">
+          <video src="./static/videos/hybrid_bicycle.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-h-garden"
+             aria-labelledby="tab-h-garden" hidden>
+          <video src="./static/videos/hybrid_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-h-counter"
+             aria-labelledby="tab-h-counter" hidden>
+          <video src="./static/videos/hybrid_counter.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-head">Single-primitive 3DGS scenes</div>
+        <div class="cards" data-cards>
+          <div class="cardstrip cardstrip-mini" role="tablist" aria-label="Single-primitive 3DGS scenes">
+          <button class="card card-mini" role="tab" id="tab-g-bonsai"
+                  aria-controls="panel-g-bonsai" aria-selected="true">Bonsai</button>
+          <button class="card card-mini" role="tab" id="tab-g-bicycle"
+                  aria-controls="panel-g-bicycle" aria-selected="false">Bicycle</button>
+          <button class="card card-mini" role="tab" id="tab-g-garden"
+                  aria-controls="panel-g-garden" aria-selected="false">Garden</button>
+          </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-g-bonsai"
+             aria-labelledby="tab-g-bonsai">
+          <video src="./static/videos/gs_bonsai.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-g-bicycle"
+             aria-labelledby="tab-g-bicycle" hidden>
+          <video src="./static/videos/gs_bicycle.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-g-garden"
+             aria-labelledby="tab-g-garden" hidden>
+          <video src="./static/videos/gs_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        </div>
+      </div>
     </div>
 
     <p class="fig-caption" style="margin-top:1.2rem">
