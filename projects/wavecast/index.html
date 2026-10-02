@@ -22,7 +22,19 @@
 
 <body>
 
+<!-- ===================== SIDE NAV ===================== -->
+<nav class="sidenav" aria-label="Section navigation">
+  <a href="#abstract"><span class="dot" aria-hidden="true"></span><span class="lbl">Abstract</span></a>
+  <a href="#methodology"><span class="dot" aria-hidden="true"></span><span class="lbl">Methodology</span></a>
+  <a href="#results"><span class="dot" aria-hidden="true"></span><span class="lbl">Results</span></a>
+  <a href="#interactive"><span class="dot" aria-hidden="true"></span><span class="lbl">Interactive</span></a>
+  <a href="#comparison"><span class="dot" aria-hidden="true"></span><span class="lbl">Comparison</span></a>
+  <a href="#ablation"><span class="dot" aria-hidden="true"></span><span class="lbl">Ablation</span></a>
+  <a href="#bibtex"><span class="dot" aria-hidden="true"></span><span class="lbl">BibTeX</span></a>
+</nav>
+
 <!-- ===================== HERO ===================== -->
+<span id="top"></span>
 <!-- gradient runs mesh -> gaussian, from the teaser legend colours:
      Ray #ecad5e and Volumetric Hit #2d9a8b, each mixed down toward white -->
 <section class="hero" style="background: linear-gradient(to bottom, #fbefdf, #e4f2f0, #ffffff);">
@@ -35,7 +47,6 @@
 
           <div class="is-size-5 publication-venue">
             SIGGRAPH Asia 2026 Conference Papers
-            <span class="venue-note">December 1&ndash;4, 2026 &middot; Kuala Lumpur, Malaysia</span>
           </div>
 
           <div class="is-size-5 publication-authors" style="margin-top:1rem">
@@ -110,7 +121,7 @@
 </section>
 
 <!-- ===================== ABSTRACT ===================== -->
-<section class="section">
+<section class="section" id="abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -155,7 +166,7 @@
 </section>
 
 <!-- ===================== METHODOLOGY ===================== -->
-<section class="section">
+<section class="section" id="methodology">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -224,7 +235,7 @@
 </section>
 
 <!-- ===================== CAPTURED RESULTS ===================== -->
-<section class="section">
+<section class="section" id="results">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -289,7 +300,7 @@
 </section>
 
 <!-- ===================== INTERACTIVE EDITING ===================== -->
-<section class="section">
+<section class="section" id="interactive">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -322,7 +333,7 @@
 </section>
 
 <!-- ===================== COMPARISONS ===================== -->
-<section class="section">
+<section class="section" id="comparison">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -420,7 +431,7 @@
 </section>
 
 <!-- ===================== MODE ABLATION / RUNTIME ===================== -->
-<section class="section">
+<section class="section" id="ablation">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -444,7 +455,7 @@
 </section>
 
 <!-- ===================== BIBTEX ===================== -->
-<section class="section" id="BibTeX">
+<section class="section" id="bibtex">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
 <pre class="bib">@inproceedings{wang2026wavecast,
@@ -482,5 +493,6 @@
 </footer>
 
 <script src="./static/js/tabs.js"></script>
+<script src="./static/js/nav.js"></script>
 </body>
 </html>

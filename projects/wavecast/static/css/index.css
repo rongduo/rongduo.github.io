@@ -3,52 +3,92 @@
    Nerfies/Bulma-style, matched to https://dof-gs.github.io/
    ------------------------------------------------------------------ */
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-/* widen the content column: Bulma's is-max-desktop is 960px */
-.container.is-max-desktop { max-width: 1123px; }
+/* ---------- floating side nav ---------- */
 
-.publication-title,
-.publication-authors,
-.title,
-.subtitle {
+.sidenav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sidenav a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.sidenav a:hover { background: rgba(0, 0, 0, 0.035); }
+
+.sidenav .dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #cdd3db;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.sidenav a:hover .dot { background: #9aa1ac; }
+
+.sidenav a.is-current .dot {
+  background: #2d9a8b;
+  transform: scale(1.45);
+}
+
+.sidenav .lbl {
   font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #949aa4;
+  white-space: nowrap;
+  transition: color 0.18s ease;
 }
 
-.publication-venue {
-  color: #555;
-  font-weight: bold;
+.sidenav a:hover .lbl { color: #55606e; }
+
+.sidenav a.is-current .lbl { color: #1f6f63; font-weight: 600; }
+
+/* keep anchored headings clear of the viewport edge */
+section[id] { scroll-margin-top: 24px; }
+
+/* not enough left margin for labels: collapse to a dot rail,
+   with the label revealed on hover */
+@media screen and (max-width: 1399px) {
+  .sidenav { left: 10px; }
+  .sidenav .lbl {
+    position: absolute;
+    left: 24px;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #e6e9ee;
+    border-radius: 5px;
+    padding: 2px 7px;
+    transition: opacity 0.15s ease;
+  }
+  .sidenav a { position: relative; }
+  .sidenav a:hover .lbl { opacity: 1; }
 }
 
-.publication-venue .venue-note {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: normal;
-  color: #777;
-  margin-top: 2px;
+/* no room at all beside the content */
+@media screen and (max-width: 1023px) {
+  .sidenav { display: none; }
 }
-
-.publication-authors a {
-  color: hsl(204, 86%, 53%) !important;
-}
-
-.publication-authors a:hover { text-decoration: underline; }
-
-.author-block { display: inline-block; }
-
-.publication-links { margin-top: 1.1rem; }
-
-.link-block a { margin: 5px 4px; }
-
-.external-link .icon svg {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-.external-link .icon svg.pdf { fill: #f24e4e; }
 
 /* ---------- captions / body copy ---------- */
 
