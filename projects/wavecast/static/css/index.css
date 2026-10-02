@@ -47,14 +47,6 @@ body {
 
 .external-link .icon svg.pdf { fill: #f24e4e; }
 
-.button.is-dark[disabled] {
-  background-color: #fff;
-  border-color: #dbdbdb;
-  color: #9a9a9a;
-  opacity: 1;
-  cursor: default;
-}
-
 /* ---------- captions / body copy ---------- */
 
 .fig-caption {
@@ -199,64 +191,6 @@ figure.fig img { width: 100%; height: auto; display: block; }
 .cmp .cell.ours { outline: 2px solid #bcd9c0; outline-offset: -2px; }
 
 /* ---------- tables ---------- */
-
-.tbl-scroll {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  contain: inline-size;
-}
-
-.scroll-hint {
-  display: none;
-  font-size: 0.8rem;
-  color: #8a8a8a;
-  margin-bottom: 0.4rem;
-}
-
-@media screen and (max-width: 1100px) { .scroll-hint { display: block; } }
-
-table.data {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.74rem;
-  font-variant-numeric: tabular-nums;
-  min-width: 1020px;
-}
-
-table.data th, table.data td {
-  padding: 5px 4px;
-  text-align: center;
-  border-bottom: 1px solid #e6e6e6;
-  white-space: nowrap;
-}
-
-table.data thead th {
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-weight: 600;
-  color: #363636;
-  border-bottom: 1.5px solid #363636;
-}
-
-table.data thead tr.grouprow th {
-  border-bottom: 1px solid #e6e6e6;
-  font-size: 0.8rem;
-}
-
-table.data th.scene, table.data td.scene {
-  text-align: left;
-  font-weight: 500;
-  padding-right: 10px;
-}
-
-table.data td.ours, table.data th.ours { background: #eef7ef; }
-
-table.data tr.avg td {
-  font-weight: 700;
-  border-top: 1.5px solid #363636;
-  border-bottom: none;
-}
-
-table.data .best { color: #1d6b35; font-weight: 700; }
 
 table.modes {
   border-collapse: collapse;
