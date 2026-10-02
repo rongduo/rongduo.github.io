@@ -154,74 +154,75 @@
   </div>
 </section>
 
-<!-- ===================== METHOD ===================== -->
+<!-- ===================== METHODOLOGY ===================== -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">How WaveCast works</h2>
+        <h2 class="title is-3">Methodology</h2>
       </div>
     </div>
 
-    <div class="content body-copy">
+    <div class="content body-copy lead-copy">
       <p>
-        Prior CGH pipelines reduce a scene to primitive positions before wave synthesis, which
-        discards the information needed to express what happens <em>along</em> a light path.
-        WaveCast instead resolves geometric transport first and carries path-level state into the
-        wave stage: rays traced through the scene produce an ordered sequence of ray&ndash;primitive
-        interactions, recording accumulated transmittance, interaction order, and reflective or
-        refractive redirection. Each interaction becomes a localized wave emitter that is accumulated
-        over a diffraction-limited subhologram footprint on the SLM plane.
-      </p>
-      <p>
-        Because the ray path survives into wavefront synthesis, the same pipeline represents effects
-        that position-only formulations cannot model directly &mdash; <strong>reflection,
-        refraction, and multi-bounce focus behavior</strong>, including the depth shifts they induce.
+        WaveCast resolves geometric transport <em>before</em> wave synthesis and carries path-level
+        state into it, so reflection, refraction and multi-bounce focus behaviour &mdash; including
+        the depth shifts they induce &mdash; survive into the hologram.
       </p>
     </div>
 
-    <figure class="fig" style="margin-top:1.5rem">
-      <img src="./static/images/pipeline.png" alt="WaveCast pipeline: ray traversal over Gaussians and meshes, per-hit emitters, and subhologram accumulation on the SLM." loading="lazy">
-      <p class="fig-caption">
-        <strong>The WaveCast pipeline.</strong> For each ray emitted from an SLM pixel, we first
-        query the nearest mesh intersection, which bounds the current ray segment. Gaussian
-        primitives within the segment are processed in depth order together with the recorded mesh
-        hit, and their complex subhologram contributions &mdash; all centered at the emitting SLM
-        pixel &mdash; are weighted by front-to-back transmittance and accumulated online. A diffuse
-        hit terminates the ray, whereas a reflective or refractive hit updates the ray origin and
-        direction and initiates a new segment, repeating until termination.
-      </p>
-    </figure>
+    <div class="cards" data-cards>
+      <div class="cardstrip" role="tablist" aria-label="Methodology">
+        <button class="card" role="tab" id="tab-pipeline" aria-controls="panel-pipeline" aria-selected="true">
+          <span class="card-no">01</span>
+          <span class="card-title">Overall pipeline</span>
+          <span class="card-sub">Ray traversal over Gaussians and meshes</span>
+        </button>
+        <button class="card" role="tab" id="tab-gather" aria-controls="panel-gather" aria-selected="false">
+          <span class="card-no">02</span>
+          <span class="card-title">Tile-based gather</span>
+          <span class="card-sub">Scatter contention removed by reordering</span>
+        </button>
+        <button class="card" role="tab" id="tab-modes" aria-controls="panel-modes" aria-selected="false">
+          <span class="card-no">03</span>
+          <span class="card-title">Execution modes</span>
+          <span class="card-sub">9.32 s &rarr; 92 ms, same reconstruction</span>
+        </button>
+      </div>
 
-    <h3 class="title is-5" style="margin-top:2.2rem">Tile-based subhologram gather</h3>
+      <div class="panel" role="tabpanel" id="panel-pipeline" aria-labelledby="tab-pipeline">
+        <p class="panel-text">
+          For each ray leaving an SLM pixel we query the nearest mesh hit, which bounds the current
+          segment. Gaussians inside that segment are processed in depth order together with the hit,
+          weighted by front-to-back transmittance and accumulated online. A diffuse hit terminates
+          the ray; a reflective or refractive one starts a new segment.
+        </p>
+        <img src="./static/images/pipeline.png" alt="WaveCast pipeline: ray traversal over Gaussians and meshes, per-hit emitters, and subhologram accumulation on the SLM." loading="lazy">
+      </div>
 
-    <div class="content body-copy">
-      <p>
-        Subhologram footprints grow with reconstruction depth and overlap heavily on the SLM, so a
-        scatter implementation drowns in concurrent atomic writes to the same pixels &mdash;
-        <strong>contention, not arithmetic, is the bottleneck</strong>. WaveCast reverses the
-        accumulation: rather than each emitter scattering into its footprint, each SLM tile gathers
-        only the emitters that overlap it, binned and sorted by tile so one CUDA block can process
-        each tile independently.
-      </p>
+      <div class="panel" role="tabpanel" id="panel-gather" aria-labelledby="tab-gather" hidden>
+        <p class="panel-text">
+          Subhologram footprints overlap heavily on the SLM, so a scatter implementation drowns in
+          concurrent atomic writes &mdash; <strong>contention, not arithmetic, is the
+          bottleneck</strong>. WaveCast reverses the accumulation: each SLM tile gathers only the
+          emitters that overlap it, binned and sorted by tile so one CUDA block handles each tile.
+        </p>
+        <img src="./static/images/tiled_gather.png" alt="Tile-based gather-style subhologram accumulation on the SLM plane." loading="lazy">
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-modes" aria-labelledby="tab-modes" hidden>
+        <p class="panel-text">
+          All three modes produce closely matching reconstructions, and Mode&nbsp;3 preserves the
+          same coherent superposition as Mode&nbsp;2 exactly &mdash; but their runtimes differ by
+          orders of magnitude.
+        </p>
+        <table class="modes">
+          <tr><td>Mode&nbsp;1</td><td>Per-hit emitters with scatter accumulation</td><td class="rt">9.32 s</td></tr>
+          <tr><td>Mode&nbsp;2</td><td>Per-segment virtual sources with scatter accumulation</td><td class="rt">310 ms</td></tr>
+          <tr><td>Mode&nbsp;3</td><td>Per-segment virtual sources with tile-based gather</td><td class="rt">92 ms</td></tr>
+        </table>
+      </div>
     </div>
-
-    <figure class="fig" style="margin-top:1.2rem">
-      <img src="./static/images/tiled_gather.png" alt="Tile-based gather-style subhologram accumulation on the SLM plane." loading="lazy">
-    </figure>
-
-    <h3 class="title is-5" style="margin-top:2.2rem">Three execution modes</h3>
-    <table class="modes">
-      <tr><td>Mode&nbsp;1</td><td>Per-hit emitters with scatter accumulation</td></tr>
-      <tr><td>Mode&nbsp;2</td><td>Per-segment virtual sources with scatter accumulation</td></tr>
-      <tr><td>Mode&nbsp;3</td><td>Per-segment virtual sources with tile-based gather</td></tr>
-    </table>
-    <p class="fig-caption">
-      All three modes produce closely matching reconstructions, but their runtimes differ by orders
-      of magnitude: 9.32&nbsp;s (Mode&nbsp;1) &rarr; 310&nbsp;ms (Mode&nbsp;2) &rarr; 92&nbsp;ms
-      (Mode&nbsp;3). Mode&nbsp;3 preserves the same coherent superposition as Mode&nbsp;2 and
-      produces identical reconstructions.
-    </p>
   </div>
 </section>
 
@@ -481,5 +482,6 @@
   </div>
 </footer>
 
+<script src="./static/js/tabs.js"></script>
 </body>
 </html>
