@@ -262,24 +262,24 @@
         <div class="col-head">Single-primitive 3DGS scenes</div>
         <div class="cards" data-cards>
           <div class="cardstrip cardstrip-mini" role="tablist" aria-label="Single-primitive 3DGS scenes">
+          <button class="card card-mini" role="tab" id="tab-g-garden"
+                  aria-controls="panel-g-garden" aria-selected="true">Garden</button>
           <button class="card card-mini" role="tab" id="tab-g-bonsai"
-                  aria-controls="panel-g-bonsai" aria-selected="true">Bonsai</button>
+                  aria-controls="panel-g-bonsai" aria-selected="false">Bonsai</button>
           <button class="card card-mini" role="tab" id="tab-g-bicycle"
                   aria-controls="panel-g-bicycle" aria-selected="false">Bicycle</button>
-          <button class="card card-mini" role="tab" id="tab-g-garden"
-                  aria-controls="panel-g-garden" aria-selected="false">Garden</button>
           </div>
+        <div class="panel panel-tight" role="tabpanel" id="panel-g-garden"
+             aria-labelledby="tab-g-garden">
+          <video src="./static/videos/gs_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
         <div class="panel panel-tight" role="tabpanel" id="panel-g-bonsai"
-             aria-labelledby="tab-g-bonsai">
+             aria-labelledby="tab-g-bonsai" hidden>
           <video src="./static/videos/gs_bonsai.mp4" autoplay loop muted playsinline preload="metadata"></video>
         </div>
         <div class="panel panel-tight" role="tabpanel" id="panel-g-bicycle"
              aria-labelledby="tab-g-bicycle" hidden>
           <video src="./static/videos/gs_bicycle.mp4" autoplay loop muted playsinline preload="metadata"></video>
-        </div>
-        <div class="panel panel-tight" role="tabpanel" id="panel-g-garden"
-             aria-labelledby="tab-g-garden" hidden>
-          <video src="./static/videos/gs_garden.mp4" autoplay loop muted playsinline preload="metadata"></video>
         </div>
         </div>
       </div>
