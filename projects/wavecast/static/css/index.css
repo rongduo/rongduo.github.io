@@ -7,8 +7,8 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-/* widen the content column: Bulma's is-max-desktop is 960px, this is 1.3x */
-.container.is-max-desktop { max-width: 1248px; }
+/* widen the content column: Bulma's is-max-desktop is 960px */
+.container.is-max-desktop { max-width: 1123px; }
 
 .publication-title,
 .publication-authors,
@@ -74,6 +74,10 @@ body {
 figure.fig { margin: 0; }
 
 figure.fig img { width: 100%; height: auto; display: block; }
+
+/* plots read fine a bit smaller than full column width */
+figure.fig-85 img,
+figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; }
 
 /* ---------- highlight stats ---------- */
 
