@@ -186,10 +186,6 @@ figure.fig { margin: 0; }
 
 figure.fig img { width: 100%; height: auto; display: block; }
 
-/* plots read fine a bit smaller than full column width */
-figure.fig-85 img,
-figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; }
-
 /* ---------- methodology cards ---------- */
 
 .lead-copy {
@@ -267,8 +263,6 @@ figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; 
 .method-summary h3 { margin: 0; font-family: 'Google Sans', sans-serif; font-size: 1.24rem; line-height: 1.3; color: #253238; }
 .method-summary p { margin: 0; font-size: .93rem; line-height: 1.7; color: #596268; }
 
-.panel-text strong { color: #363636; }
-
 .panel img { width: 100%; height: auto; display: block; }
 
 .mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -278,16 +272,6 @@ figure.fig-85 .fig-caption { width: 85%; margin-left: auto; margin-right: auto; 
 .mode-item strong { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-family: 'Google Sans', sans-serif; font-size: 1.18rem; color: #667078; }
 .mode-item.is-fast { border-color: #9fcfc7; background: #f1f9f7; }
 .mode-item.is-fast strong { color: #1f786b; }
-.panel table.modes { margin: 0 auto; }
-
-table.modes td.rt {
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-weight: 700;
-  color: #2d9a8b;
-  text-align: right;
-  white-space: nowrap;
-  padding-left: 24px;
-}
 
 @media screen and (max-width: 768px) {
   .cardstrip {
@@ -421,8 +405,6 @@ table.modes td.rt {
 
 .cmp .cell.ours { outline: 2px solid #bcd9c0; outline-offset: -2px; }
 
-/* ---------- tables ---------- */
-
 /* ---------- ablation figures ---------- */
 
 .ablation-lead {
@@ -501,26 +483,6 @@ table.modes td.rt {
   .figure-meta { display: inline-block; margin-top: 10px; }
   .ablation-quality img,
   .ablation-scaling img { width: 100%; }
-}
-
-table.modes {
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  margin: 0 auto;
-}
-
-table.modes td {
-  padding: 6px 16px 6px 0;
-  border-bottom: 1px solid #e6e6e6;
-  color: #4a4a4a;
-  text-align: left;
-}
-
-table.modes td:first-child {
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-weight: 600;
-  color: #363636;
-  white-space: nowrap;
 }
 
 /* ---------- bibtex ---------- */
